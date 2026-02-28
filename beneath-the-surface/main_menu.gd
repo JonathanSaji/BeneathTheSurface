@@ -3,6 +3,7 @@ extends Control
 @onready var play_btn    : Button = $ColorRect/VBoxContainer/Play
 @onready var options_btn : Button = $ColorRect/VBoxContainer/Options
 @onready var quit_btn    : Button = $ColorRect/VBoxContainer/Quit
+@onready var anim = $AnimationPlayer
 
 
 func _ready() -> void:
@@ -12,7 +13,7 @@ func _ready() -> void:
 
 func _on_play_pressed() -> void:
 	# get_tree().change_scene_to_file("res://Game.tscn")
-	print("Play Pressed")
+	anim.play("scroll_up")
 
 func _on_options_pressed() -> void:
 	print("Options pressed")
