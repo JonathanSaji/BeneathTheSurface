@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dn1fa3k45ao1u" path="res://movement.gd" id="1_2o1rx"]
 [ext_resource type="Texture2D" uid="uid://b51gtxpnusxaj" path="res://Game Boy _ GBC - Survival Kids - Playable Characters - Boy.png" id="1_ex3hv"]
+[ext_resource type="Script" uid="uid://b8yddse4ypt65" path="res://prologue.gd" id="1_orjk5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2o1rx"]
 atlas = ExtResource("1_ex3hv")
@@ -34,7 +35,45 @@ size = Vector2(1980, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwpj4"]
 size = Vector2(17, 927)
 
+[sub_resource type="Animation" id="Animation_2o1rx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_orjk5"]
+resource_name = "scroll_up"
+length = 3.3666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0667, 3.2666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -1080)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4baxb"]
+_data = {
+&"RESET": SubResource("Animation_2o1rx"),
+&"scroll_up": SubResource("Animation_orjk5")
+}
+
 [node name="Prologue" type="Node2D" unique_id=455793301]
+script = ExtResource("1_orjk5")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=91627495]
 position = Vector2(-10, 924)
@@ -58,3 +97,41 @@ shape = SubResource("RectangleShape2D_2o1rx")
 [node name="Left" type="CollisionShape2D" parent="StaticBody2D" unique_id=968707683]
 position = Vector2(0, 468)
 shape = SubResource("RectangleShape2D_rwpj4")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1746273718]
+offset_right = 1980.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect2" unique_id=1533699963]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 300.0
+offset_right = 1307.0
+offset_bottom = 695.0001
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="ColorRect2/VBoxContainer" unique_id=172989430]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "The Moles Are Coming
+"
+
+[node name="Play" type="Button" parent="ColorRect2/VBoxContainer" unique_id=845424763]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Enter"
+
+[node name="Options" type="Button" parent="ColorRect2/VBoxContainer" unique_id=1390156084]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Options"
+
+[node name="Quit" type="Button" parent="ColorRect2/VBoxContainer" unique_id=1970490779]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Quit
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=385394203]
+libraries/ = SubResource("AnimationLibrary_4baxb")
