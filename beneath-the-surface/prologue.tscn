@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://co84fslw88jdd"]
+[gd_scene format=3 uid="uid://b1g5rqxber4hx"]
 
-[ext_resource type="Script" uid="uid://dn1fa3k45ao1u" path="res://movement.gd" id="1_2o1rx"]
+[ext_resource type="Script" path="res://movement.gd" id="1_2o1rx"]
 [ext_resource type="Texture2D" uid="uid://b51gtxpnusxaj" path="res://Game Boy _ GBC - Survival Kids - Playable Characters - Boy.png" id="1_ex3hv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2o1rx"]
@@ -37,22 +37,22 @@ size = Vector2(17, 927)
 [node name="Prologue" type="Node2D" unique_id=455793301]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1769746898]
-offset_left = 2.0
-offset_top = 927.0
-offset_right = 1982.0
-offset_bottom = 1077.0
+offset_left = -10.0
+offset_top = 924.0
+offset_right = 1970.0
+offset_bottom = 1074.0
 color = Color(0.8053361, 0.4193132, 0, 1)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="ColorRect" unique_id=91627495]
 script = ExtResource("1_2o1rx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/CharacterBody2D" unique_id=786690278]
-position = Vector2(118, -64)
+position = Vector2(139, -128)
 scale = Vector2(8.584427, 7.064448)
 sprite_frames = SubResource("SpriteFrames_4baxb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/CharacterBody2D" unique_id=85152621]
-position = Vector2(118, -64)
+position = Vector2(144, -110)
 shape = SubResource("RectangleShape2D_orjk5")
 
 [node name="Area2D" type="Area2D" parent="ColorRect" unique_id=885387073]
