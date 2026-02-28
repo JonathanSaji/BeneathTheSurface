@@ -4,37 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b51gtxpnusxaj" path="res://Game Boy _ GBC - Survival Kids - Playable Characters - Boy.png" id="1_ex3hv"]
 [ext_resource type="Script" uid="uid://b8yddse4ypt65" path="res://prologue.gd" id="1_orjk5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2o1rx"]
-atlas = ExtResource("1_ex3hv")
-region = Rect2(92, 74, 17, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_orjk5"]
-atlas = ExtResource("1_ex3hv")
-region = Rect2(75, 74, 17, 18)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_4baxb"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2o1rx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_orjk5")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_orjk5"]
-size = Vector2(146, 126)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o1rx"]
-size = Vector2(1980, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwpj4"]
-size = Vector2(17, 927)
-
 [sub_resource type="Animation" id="Animation_2o1rx"]
 length = 0.001
 tracks/0/type = "value"
@@ -72,31 +41,39 @@ _data = {
 &"scroll_up": SubResource("Animation_orjk5")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o1rx"]
+atlas = ExtResource("1_ex3hv")
+region = Rect2(92, 74, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orjk5"]
+atlas = ExtResource("1_ex3hv")
+region = Rect2(75, 74, 17, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4baxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o1rx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orjk5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orjk5"]
+size = Vector2(146, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o1rx"]
+size = Vector2(1980, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwpj4"]
+size = Vector2(17, 927)
+
 [node name="Prologue" type="Node2D" unique_id=455793301]
 script = ExtResource("1_orjk5")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=91627495]
-position = Vector2(-10, 924)
-script = ExtResource("1_2o1rx")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=786690278]
-position = Vector2(139, -128)
-scale = Vector2(8.584427, 7.064448)
-sprite_frames = SubResource("SpriteFrames_4baxb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=85152621]
-position = Vector2(139, -127)
-shape = SubResource("RectangleShape2D_orjk5")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=772845835]
-
-[node name="Bottom" type="CollisionShape2D" parent="StaticBody2D" unique_id=1146581181]
-position = Vector2(991, 938)
-shape = SubResource("RectangleShape2D_2o1rx")
-
-[node name="Left" type="CollisionShape2D" parent="StaticBody2D" unique_id=968707683]
-position = Vector2(0, 468)
-shape = SubResource("RectangleShape2D_rwpj4")
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1746273718]
 offset_right = 1980.0
@@ -135,3 +112,31 @@ text = "Quit
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=385394203]
 libraries/ = SubResource("AnimationLibrary_4baxb")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1611906930]
+offset_right = 1980.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="ColorRect" unique_id=91627495]
+position = Vector2(-10, 924)
+script = ExtResource("1_2o1rx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/CharacterBody2D" unique_id=786690278]
+position = Vector2(139, -128)
+scale = Vector2(8.584427, 7.064448)
+sprite_frames = SubResource("SpriteFrames_4baxb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/CharacterBody2D" unique_id=85152621]
+position = Vector2(139, -127)
+shape = SubResource("RectangleShape2D_orjk5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect" unique_id=772845835]
+
+[node name="Bottom" type="CollisionShape2D" parent="ColorRect/StaticBody2D" unique_id=1146581181]
+position = Vector2(991, 938)
+shape = SubResource("RectangleShape2D_2o1rx")
+
+[node name="Left" type="CollisionShape2D" parent="ColorRect/StaticBody2D" unique_id=968707683]
+position = Vector2(0, 468)
+shape = SubResource("RectangleShape2D_rwpj4")
