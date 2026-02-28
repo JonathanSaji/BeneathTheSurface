@@ -1,10 +1,16 @@
 extends Node2D
 @onready var anim = $AnimationPlayer
+@onready var camera: Camera2D = $ColorRect/CharacterBody2D/Camera2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	camera.enabled = false
 	anim.play("scroll_up")
+	anim.animation_finished.connect(_on_animation_finished)
 
+func _on_animation_finished(name: StringName) -> void:
+	if name == "scroll_up":
+		camera.enabled = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
