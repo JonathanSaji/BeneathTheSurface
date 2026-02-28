@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://co84fslw88jdd"]
 
 [ext_resource type="Script" uid="uid://dn1fa3k45ao1u" path="res://movement.gd" id="1_2o1rx"]
-[ext_resource type="Texture2D" uid="uid://b51gtxpnusxaj" path="res://Game Boy _ GBC - Survival Kids - Playable Characters - Boy.png" id="1_ex3hv"]
-[ext_resource type="Script" uid="uid://b8yddse4ypt65" path="res://prologue.gd" id="1_orjk5"]
+[ext_resource type="Script" path="res://prologue.gd" id="1_orjk5"]
+[ext_resource type="Texture2D" uid="uid://hs3nsqejmer3" path="res://Pip-Run.png" id="3_orjk5"]
 
 [sub_resource type="Animation" id="Animation_2o1rx"]
 length = 0.001
@@ -53,30 +53,58 @@ _data = {
 &"scroll_up": SubResource("Animation_orjk5")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2o1rx"]
-atlas = ExtResource("1_ex3hv")
-region = Rect2(92, 74, 17, 18)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4baxb"]
+atlas = ExtResource("3_orjk5")
+region = Rect2(0, 432, 216, 216)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_orjk5"]
-atlas = ExtResource("1_ex3hv")
-region = Rect2(75, 74, 17, 18)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx85p"]
+atlas = ExtResource("3_orjk5")
+region = Rect2(216, 432, 216, 216)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4baxb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwpj4"]
+atlas = ExtResource("3_orjk5")
+region = Rect2(432, 432, 216, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp6mw"]
+atlas = ExtResource("3_orjk5")
+region = Rect2(648, 432, 216, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01crl"]
+atlas = ExtResource("3_orjk5")
+region = Rect2(864, 432, 216, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hioj"]
+atlas = ExtResource("3_orjk5")
+region = Rect2(1080, 432, 216, 216)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ohvg6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2o1rx")
+"texture": SubResource("AtlasTexture_4baxb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_orjk5")
+"texture": SubResource("AtlasTexture_mx85p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwpj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp6mw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01crl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hioj")
 }],
-"loop": true,
-"name": &"default",
+"loop": false,
+"name": &"run",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orjk5"]
-size = Vector2(146, 126)
+size = Vector2(146, 189)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2o1rx"]
 size = Vector2(1980, 20)
@@ -134,13 +162,13 @@ color = Color(0, 0, 0, 0)
 position = Vector2(-10, 924)
 script = ExtResource("1_2o1rx")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/CharacterBody2D" unique_id=786690278]
-position = Vector2(139, -128)
-scale = Vector2(8.584427, 7.064448)
-sprite_frames = SubResource("SpriteFrames_4baxb")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/CharacterBody2D" unique_id=2007820625]
+position = Vector2(132, -154)
+sprite_frames = SubResource("SpriteFrames_ohvg6")
+animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/CharacterBody2D" unique_id=85152621]
-position = Vector2(139, -127)
+position = Vector2(141, -139.5)
 shape = SubResource("RectangleShape2D_orjk5")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ColorRect" unique_id=772845835]

@@ -32,17 +32,12 @@ func _physics_process(delta : float):
 		anim.flip_h = true
 		
 	move_and_slide()
-"""
-	if not is_on_floor():
-		if anim.animation != "jump":
-			anim.play("jump")
-	elif direction != 0:
-		if anim.animation != "run":
-			anim.play("run")
-	else:
-		if anim.animation != "idle":
-			anim.play("idle")
-"""
+
+
+	if direction != 0:
+		anim.play("run")
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print(anim)
