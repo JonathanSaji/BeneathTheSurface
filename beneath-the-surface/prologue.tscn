@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://co84fslw88jdd"]
+
+[ext_resource type="Script" uid="uid://dn1fa3k45ao1u" path="res://movement.gd" id="1_2o1rx"]
+[ext_resource type="Texture2D" uid="uid://b51gtxpnusxaj" path="res://Game Boy _ GBC - Survival Kids - Playable Characters - Boy.png" id="1_ex3hv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o1rx"]
+atlas = ExtResource("1_ex3hv")
+region = Rect2(92, 74, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orjk5"]
+atlas = ExtResource("1_ex3hv")
+region = Rect2(75, 74, 17, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4baxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o1rx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orjk5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orjk5"]
+size = Vector2(146, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mx85p"]
+size = Vector2(1977, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwpj4"]
+size = Vector2(17, 927)
+
+[node name="Prologue" type="Node2D" unique_id=455793301]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1769746898]
+offset_left = 2.0
+offset_top = 927.0
+offset_right = 1982.0
+offset_bottom = 1077.0
+color = Color(0.8053361, 0.4193132, 0, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="ColorRect" unique_id=91627495]
+script = ExtResource("1_2o1rx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/CharacterBody2D" unique_id=786690278]
+position = Vector2(118, -64)
+scale = Vector2(8.584427, 7.064448)
+sprite_frames = SubResource("SpriteFrames_4baxb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/CharacterBody2D" unique_id=85152621]
+position = Vector2(118, -64)
+shape = SubResource("RectangleShape2D_orjk5")
+
+[node name="Area2D" type="Area2D" parent="ColorRect" unique_id=885387073]
+
+[node name="Bottom" type="CollisionShape2D" parent="ColorRect/Area2D" unique_id=1146581181]
+position = Vector2(989.5, 14)
+shape = SubResource("RectangleShape2D_mx85p")
+
+[node name="Left" type="CollisionShape2D" parent="ColorRect/Area2D" unique_id=968707683]
+position = Vector2(-3.5, -465.5)
+shape = SubResource("RectangleShape2D_rwpj4")
