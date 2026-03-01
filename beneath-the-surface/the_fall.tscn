@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://comgpamwu00yj"]
 
-[ext_resource type="FontFile" uid="uid://d3tjnf3p2p8t7" path="res://TheRomanRunesAlliance.ttf" id="1_drsb6"]
 [ext_resource type="Script" uid="uid://daabh1iuirrg3" path="res://the_fall.gd" id="1_yra52"]
 [ext_resource type="Texture2D" uid="uid://bioqcjv0l3btp" path="res://PixelFantasy_Caves_1.0/background4a.png" id="2_6quko"]
 [ext_resource type="Texture2D" uid="uid://bdku0q0o74c1k" path="res://PipBoy/Pip-Fall.png" id="2_u84h0"]
+[ext_resource type="FontFile" uid="uid://flkxapr5k2y5" path="res://VT323-Regular.ttf" id="3_6quko"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yra52"]
 atlas = ExtResource("2_u84h0")
@@ -178,9 +178,9 @@ layout_mode = 0
 offset_left = 1094.0
 offset_top = -155.0
 offset_right = 3328.0
-offset_bottom = -80.0
+offset_bottom = -55.0
 rotation = 4.712389
-theme_override_fonts/font = ExtResource("1_drsb6")
+theme_override_fonts/font = ExtResource("3_6quko")
 theme_override_font_sizes/font_size = 100
 text = "AHH HHHH HHHHHHH HH H HHH HH HH HHHH H HH"
 

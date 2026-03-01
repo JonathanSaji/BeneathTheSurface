@@ -76,11 +76,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Enter"
 
-[node name="Options" type="Button" parent="ColorRect/VBoxContainer" unique_id=134962909]
-layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "Options"
-
 [node name="Quit" type="Button" parent="ColorRect/VBoxContainer" unique_id=1076045703]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60

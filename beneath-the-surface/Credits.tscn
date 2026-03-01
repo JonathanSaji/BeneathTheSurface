@@ -1,0 +1,400 @@
+[gd_scene format=3 uid="uid://bolbsm3fnhs20"]
+
+[ext_resource type="Texture2D" uid="uid://cmp5gns03j4or" path="res://assets/Drill.png" id="1_4qwwl"]
+[ext_resource type="Texture2D" uid="uid://b6iif4gu7op0h" path="res://assets/Outlined-Drill-Fire.png" id="2_obosj"]
+[ext_resource type="FontFile" uid="uid://flkxapr5k2y5" path="res://VT323-Regular.ttf" id="3_obosj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k2yj5"]
+load_path = "res://.godot/imported/background4a.png-035b5887a858550427d66bffa5566189.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xic2l"]
+load_path = "res://.godot/imported/background4a.png-035b5887a858550427d66bffa5566189.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s70hm"]
+atlas = ExtResource("1_4qwwl")
+region = Rect2(0, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia8qu"]
+atlas = ExtResource("1_4qwwl")
+region = Rect2(1080, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hb5c"]
+atlas = ExtResource("1_4qwwl")
+region = Rect2(0, 1080, 1080, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uuw8f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s70hm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ia8qu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hb5c")
+}],
+"loop": true,
+"name": &"drill",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dx6g"]
+atlas = ExtResource("2_obosj")
+region = Rect2(0, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ybrq"]
+atlas = ExtResource("2_obosj")
+region = Rect2(0, 1080, 1080, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lpn6h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dx6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ybrq")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_2d5g6"]
+resource_name = "End"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/Rocket:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8.966666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-38, 946), Vector2(-119, -1409)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/Tunnels:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 8.966666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 17000)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/Credits:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(8.966666, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(11, -1074), Vector2(-6, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect/Credits/Dont Go Up:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(11.033334, 14, 17),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(575, 2250), Vector2(557, 201), Vector2(540, -718)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect/Credits/Label:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(17, 19.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(578, 2259), Vector2(590, 326)]
+}
+
+[sub_resource type="Animation" id="Animation_ckf10"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/Rocket:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-38, 946)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/Tunnels:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/Credits:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, -1074)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect/Credits/Dont Go Up:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(570, 1078)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect/Credits/Label:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(607, 1078)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nnoy8"]
+_data = {
+&"End": SubResource("Animation_2d5g6"),
+&"RESET": SubResource("Animation_ckf10")
+}
+
+[node name="Credits" type="Control" unique_id=576591826]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1995482530]
+layout_mode = 0
+offset_right = 1980.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="Tunnels" type="VBoxContainer" parent="ColorRect" unique_id=1844723599]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 39.996094
+
+[node name="Background4a2" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=1848600546]
+position = Vector2(1028.5001, 1433)
+rotation = 1.5707964
+scale = Vector2(1, 4.631)
+texture = SubResource("CompressedTexture2D_k2yj5")
+
+[node name="Background4a" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=645405201]
+position = Vector2(1022.5, 467.00006)
+rotation = 1.5707964
+scale = Vector2(1, 4.63125)
+texture = SubResource("CompressedTexture2D_xic2l")
+
+[node name="Background4a3" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=1804406396]
+position = Vector2(1028.5001, -483)
+rotation = 1.5707964
+scale = Vector2(1, 4.631)
+texture = SubResource("CompressedTexture2D_k2yj5")
+
+[node name="Background4a4" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=1076941175]
+position = Vector2(1022.5, -1449)
+rotation = 1.5707964
+scale = Vector2(1, 4.63125)
+texture = SubResource("CompressedTexture2D_xic2l")
+
+[node name="Background4a5" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=278321379]
+position = Vector2(1010.5001, -2408)
+rotation = 1.5707964
+scale = Vector2(1, 4.631)
+texture = SubResource("CompressedTexture2D_k2yj5")
+
+[node name="Background4a6" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=1830965543]
+position = Vector2(1004.5, -3374)
+rotation = 1.5707964
+scale = Vector2(1, 4.63125)
+texture = SubResource("CompressedTexture2D_xic2l")
+
+[node name="Background4a7" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=1308202029]
+position = Vector2(999.5001, -4337)
+rotation = 1.5707964
+scale = Vector2(1, 4.631)
+texture = SubResource("CompressedTexture2D_k2yj5")
+
+[node name="Background4a8" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=11633817]
+position = Vector2(993.5, -5303)
+rotation = 1.5707964
+scale = Vector2(1, 4.63125)
+texture = SubResource("CompressedTexture2D_xic2l")
+
+[node name="Background4a9" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=1504979632]
+position = Vector2(988.5001, -6266)
+rotation = 1.5707964
+scale = Vector2(1, 4.631)
+texture = SubResource("CompressedTexture2D_k2yj5")
+
+[node name="Background4a10" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=1171449614]
+position = Vector2(982.5, -7232)
+rotation = 1.5707964
+scale = Vector2(1, 4.63125)
+texture = SubResource("CompressedTexture2D_xic2l")
+
+[node name="Background4a11" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=1388050581]
+position = Vector2(1002.5001, -8192)
+rotation = 1.5707964
+scale = Vector2(1, 4.631)
+texture = SubResource("CompressedTexture2D_k2yj5")
+
+[node name="Background4a12" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=512549017]
+position = Vector2(996.5, -9158)
+rotation = 1.5707964
+scale = Vector2(1, 4.63125)
+texture = SubResource("CompressedTexture2D_xic2l")
+
+[node name="Background4a13" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=1152329499]
+position = Vector2(1002.5001, -10108)
+rotation = 1.5707964
+scale = Vector2(1, 4.631)
+texture = SubResource("CompressedTexture2D_k2yj5")
+
+[node name="Background4a14" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=404848609]
+position = Vector2(996.5, -11074)
+rotation = 1.5707964
+scale = Vector2(1, 4.63125)
+texture = SubResource("CompressedTexture2D_xic2l")
+
+[node name="Background4a15" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=1337902668]
+position = Vector2(984.5001, -12033)
+rotation = 1.5707964
+scale = Vector2(1, 4.631)
+texture = SubResource("CompressedTexture2D_k2yj5")
+
+[node name="Background4a16" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=1396427231]
+position = Vector2(978.5, -12999)
+rotation = 1.5707964
+scale = Vector2(1, 4.63125)
+texture = SubResource("CompressedTexture2D_xic2l")
+
+[node name="Background4a17" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=1234766887]
+position = Vector2(973.5001, -13962)
+rotation = 1.5707964
+scale = Vector2(1, 4.631)
+texture = SubResource("CompressedTexture2D_k2yj5")
+
+[node name="Background4a18" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=1189449756]
+position = Vector2(967.5, -14928)
+rotation = 1.5707964
+scale = Vector2(1, 4.63125)
+texture = SubResource("CompressedTexture2D_xic2l")
+
+[node name="Background4a19" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=302517865]
+position = Vector2(962.5001, -15891)
+rotation = 1.5707964
+scale = Vector2(1, 4.631)
+texture = SubResource("CompressedTexture2D_k2yj5")
+
+[node name="Background4a20" type="Sprite2D" parent="ColorRect/Tunnels" unique_id=1350724919]
+position = Vector2(956.5, -16857)
+rotation = 1.5707964
+scale = Vector2(1, 4.63125)
+texture = SubResource("CompressedTexture2D_xic2l")
+
+[node name="Rocket" type="VBoxContainer" parent="ColorRect" unique_id=351039232]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 946.0
+offset_right = 2.0
+offset_bottom = 986.0001
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ColorRect/Rocket" unique_id=1376428269]
+position = Vector2(1146, 673)
+scale = Vector2(0.48933336, 0.6938814)
+sprite_frames = SubResource("SpriteFrames_uuw8f")
+animation = &"drill"
+autoplay = "drill"
+frame_progress = 0.75738287
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/Rocket" unique_id=732808348]
+position = Vector2(1181, 1006)
+scale = Vector2(0.699891, 1.2236363)
+sprite_frames = SubResource("SpriteFrames_lpn6h")
+animation = &"fire"
+autoplay = "fire"
+frame_progress = 0.89067394
+
+[node name="Credits" type="ColorRect" parent="ColorRect" unique_id=1091907252]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -1074.0
+offset_right = 1991.0
+offset_bottom = 6.0
+
+[node name="Dont Go Up" type="Label" parent="ColorRect/Credits" unique_id=1105709699]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 1078.0
+offset_right = 1483.9868
+offset_bottom = 1796.0005
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Dont GO UP!
+
+Jonathan Saji
+
+Sebastian Chainho 
+
+Jayden Jacob Jobin"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/Credits" unique_id=2113221717]
+layout_mode = 0
+offset_left = 607.0
+offset_top = 1078.0
+offset_right = 1438.0
+offset_bottom = 1487.0061
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_obosj")
+theme_override_font_sizes/font_size = 100
+text = "Thank You
+
+The Moles Were Right
+"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=516651695]
+libraries/ = SubResource("AnimationLibrary_nnoy8")
+autoplay = &"End"

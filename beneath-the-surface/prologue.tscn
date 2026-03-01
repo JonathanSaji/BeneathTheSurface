@@ -1222,11 +1222,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Enter"
 
-[node name="Options" type="Button" parent="Menu/VBoxContainer" unique_id=1390156084]
-layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "Options"
-
 [node name="Quit" type="Button" parent="Menu/VBoxContainer" unique_id=1970490779]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
