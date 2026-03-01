@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://byqqfrftch72f" path="res://hearts/2026-03-01_05_47_02-underground.tscn_-_BeneathTheSurface_-_Godot_Engine-removebg-preview.png" id="15_la4fl"]
 [ext_resource type="Texture2D" uid="uid://vp8krahk67q0" path="res://hearts/2026-03-01_05_46_15-underground.tscn_-_BeneathTheSurface_-_Godot_Engine-removebg-preview.png" id="16_c3syi"]
 [ext_resource type="Texture2D" uid="uid://eqe37xia64yk" path="res://hearts/2026-03-01_05_45_20-underground.tscn_-_BeneathTheSurface_-_Godot_Engine-removebg-preview.png" id="17_r4jq7"]
+[ext_resource type="Texture2D" uid="uid://cirwbpisiej2a" path="res://assets/key.png" id="18_ud1dr"]
 [ext_resource type="Texture2D" uid="uid://bu1y4jv3mx83v" path="res://pixel-door.png" id="19_cb60e"]
 [ext_resource type="Script" uid="uid://dh3bf010ky5oa" path="res://block.gd" id="20_ud1dr"]
 [ext_resource type="Texture2D" uid="uid://c4b7ln7xpboph" path="res://block-broken.png" id="21_3fduj"]
@@ -1574,6 +1575,11 @@ shape = SubResource("RectangleShape2D_tqw8v")
 position = Vector2(3260.5, -442.00006)
 scale = Vector2(23.111689, 5.3992023)
 shape = SubResource("RectangleShape2D_g1stl")
+
+[node name="Key" type="Sprite2D" parent="BlockCollisions" unique_id=376670115]
+position = Vector2(-502, -266)
+scale = Vector2(0.28584558, 0.21323529)
+texture = ExtResource("18_ud1dr")
 
 [node name="Exit" type="Area2D" parent="." unique_id=2090170482]
 position = Vector2(1352, 979)
