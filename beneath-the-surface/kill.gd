@@ -5,7 +5,6 @@ var dead = false
 func death():
 	dead = true
 
-
 	
 	
 	

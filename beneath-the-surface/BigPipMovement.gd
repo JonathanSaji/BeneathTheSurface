@@ -93,6 +93,7 @@ func _physics_process(delta: float):
 	for body in attack_area.get_overlapping_bodies():
 		if body.has_method("death"):
 			hp = 0
+	
 	# Door entry
 	if entering_door:
 		velocity.x = 0
