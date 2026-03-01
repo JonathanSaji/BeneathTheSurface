@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hs3nsqejmer3"
-path="res://.godot/imported/Pip-Run.png-2ba2ef5a5e3b74a5e02b3640a8a07664.ctex"
+path="res://.godot/imported/Pip-Run.png-d4995677a5aa7db0196f24175d8619b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pip-Run.png"
-dest_files=["res://.godot/imported/Pip-Run.png-2ba2ef5a5e3b74a5e02b3640a8a07664.ctex"]
+source_file="res://PipBoy/Pip-Run.png"
+dest_files=["res://.godot/imported/Pip-Run.png-d4995677a5aa7db0196f24175d8619b3.ctex"]
 
 [params]
 

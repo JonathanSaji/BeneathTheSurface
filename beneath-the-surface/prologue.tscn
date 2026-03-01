@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dn1fa3k45ao1u" path="res://movement.gd" id="1_2o1rx"]
 [ext_resource type="Script" uid="uid://b8yddse4ypt65" path="res://prologue.gd" id="1_orjk5"]
 [ext_resource type="Texture2D" uid="uid://cbjipr3g05aru" path="res://PixelFantasy_Caves_1.0/mainlev_build.png" id="2_4baxb"]
-[ext_resource type="Texture2D" uid="uid://hs3nsqejmer3" path="res://Pip-Run.png" id="3_orjk5"]
+[ext_resource type="Texture2D" uid="uid://hs3nsqejmer3" path="res://PipBoy/Pip-Run.png" id="3_orjk5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mx85p"]
 texture = ExtResource("2_4baxb")
@@ -916,6 +916,9 @@ texture = ExtResource("2_4baxb")
 [sub_resource type="TileSet" id="TileSet_rwpj4"]
 sources/0 = SubResource("TileSetAtlasSource_mx85p")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4baxb"]
+size = Vector2(279, 459)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4baxb"]
 atlas = ExtResource("3_orjk5")
 region = Rect2(0, 432, 216, 216)
@@ -969,9 +972,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orjk5"]
 size = Vector2(146, 189)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4baxb"]
-size = Vector2(279, 459)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2o1rx"]
 size = Vector2(1980, 20)
 
@@ -983,7 +983,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect2:position")
+tracks/0/path = NodePath("Menu:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -999,7 +999,7 @@ length = 3.3666666
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect2:position")
+tracks/0/path = NodePath("Menu:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1011,7 +1011,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:position")
+tracks/1/path = NodePath("Scene:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1030,12 +1030,12 @@ _data = {
 [node name="Prologue" type="Node2D" unique_id=455793301]
 script = ExtResource("1_orjk5")
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=1746273718]
+[node name="Menu" type="ColorRect" parent="." unique_id=1746273718]
 offset_right = 1980.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect2" unique_id=1533699963]
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu" unique_id=1533699963]
 layout_mode = 0
 offset_left = 650.0
 offset_top = 300.0
@@ -1043,74 +1043,75 @@ offset_right = 1307.0
 offset_bottom = 695.0001
 theme_override_constants/separation = 40
 
-[node name="Label" type="Label" parent="ColorRect2/VBoxContainer" unique_id=172989430]
+[node name="Label" type="Label" parent="Menu/VBoxContainer" unique_id=172989430]
 layout_mode = 2
 theme_override_font_sizes/font_size = 72
 text = "The Moles Are Coming
 "
 
-[node name="Play" type="Button" parent="ColorRect2/VBoxContainer" unique_id=845424763]
+[node name="Play" type="Button" parent="Menu/VBoxContainer" unique_id=845424763]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Enter"
 
-[node name="Options" type="Button" parent="ColorRect2/VBoxContainer" unique_id=1390156084]
+[node name="Options" type="Button" parent="Menu/VBoxContainer" unique_id=1390156084]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Options"
 
-[node name="Quit" type="Button" parent="ColorRect2/VBoxContainer" unique_id=1970490779]
+[node name="Quit" type="Button" parent="Menu/VBoxContainer" unique_id=1970490779]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Quit
 "
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1611906930]
+[node name="Scene" type="ColorRect" parent="." unique_id=1611906930]
 offset_left = 9.0
 offset_top = 1071.0
 offset_right = 1989.0
 offset_bottom = 2151.0
 color = Color(0, 0, 0, 0)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="ColorRect" unique_id=2135271751]
+[node name="TileMapLayer" type="TileMapLayer" parent="Scene" unique_id=2135271751]
 position = Vector2(0, 5)
 scale = Vector2(8, 8)
 tile_map_data = PackedByteArray("AAAMAAMAAAA8AAEAAAAMAAQAAAA8AAIAAAAMAAUAAAA8AAMAAAAMAAYAAAA8AAQAAAANAAMAAAA9AAEAAAANAAQAAAA9AAIAAAANAAUAAAA9AAMAAAANAAYAAAA9AAQAAAAOAAMAAAA+AAEAAAAOAAQAAAA+AAIAAAAOAAUAAAA+AAMAAAAOAAYAAAA+AAQAAAABAAMAAAA1AAMAAAACAAMAAAAwAAMAAAADAAMAAAAxAAMAAAAEAAMAAAAyAAMAAAAFAAMAAAAzAAMAAAAGAAMAAAA0AAMAAAAHAAMAAAA1AAMAAAAIAAMAAAA2AAMAAAAJAAMAAAA3AAMAAAAKAAMAAAA4AAMAAAALAAMAAAA1AAMAAAAAAAMAAAA1AAMAAAAGAAAAAAAzAAYAAAAGAAEAAAAzAAcAAAAGAAIAAAAzAAgAAAAHAAAAAAA0AAYAAAAHAAEAAAA0AAcAAAAHAAIAAAA0AAgAAAAIAAAAAAA1AAYAAAAIAAEAAAA1AAcAAAAIAAIAAAA1AAgAAAAJAP7/AAA5ACAAAAAJAAEAAAA5ACMAAAAKAP//AAA6ACEAAAAKAAAAAAA6ACIAAAAKAAEAAAA6ACMAAAALAAAAAAA7ACIAAAALAAEAAAA7ACMAAAALAAIAAAA7ACQAAAAMAP//AAA8ACEAAAAMAAAAAAA8ACIAAAAMAAEAAAA8ACMAAAAMAAIAAAA8ACQAAAANAAAAAAA9ACIAAAANAAEAAAA9ACMAAAANAAIAAAA9ACQAAAAOAP//AAA+ACEAAAAOAAAAAAA+ACIAAAAOAAEAAAA+ACMAAAAOAAIAAAA+ACQAAAAAAP//AAA0ACEAAAAAAAAAAAA0ACIAAAAAAAEAAAA0ACMAAAAAAAIAAAA0ACQAAAABAAAAAAA1ACIAAAABAAEAAAA1ACMAAAABAAIAAAA1ACQAAAACAP//AAA2ACEAAAACAAAAAAA2ACIAAAACAAEAAAA2ACMAAAACAAIAAAA2ACQAAAADAAAAAAA3ACIAAAADAAEAAAA3ACMAAAADAAIAAAA3ACQAAAAEAP//AAA4ACEAAAAEAAAAAAA4ACIAAAAEAAEAAAA4ACMAAAAAAAQAAAAnADAAAAAAAAUAAAAnADEAAAAAAAYAAAAnADIAAAABAAQAAAAoADAAAAABAAUAAAAoADEAAAABAAYAAAAoADIAAAACAAQAAAApADAAAAACAAUAAAApADEAAAACAAYAAAApADIAAAADAAQAAAAqADAAAAADAAUAAAAqADEAAAADAAYAAAAqADIAAAAEAAQAAAAnADAAAAAEAAUAAAAnADEAAAAEAAYAAAAnADIAAAAFAAQAAAAoADAAAAAFAAUAAAAoADEAAAAFAAYAAAAoADIAAAAGAAQAAAApADAAAAAGAAUAAAApADEAAAAGAAYAAAApADIAAAAHAAQAAAAqADAAAAAHAAUAAAAqADEAAAAHAAYAAAAqADIAAAAIAAQAAAAnADAAAAAIAAUAAAAnADEAAAAIAAYAAAAnADIAAAAJAAQAAAAoADAAAAAJAAUAAAAoADEAAAAJAAYAAAAoADIAAAAKAAQAAAApADAAAAAKAAUAAAApADEAAAAKAAYAAAApADIAAAALAAQAAAAqADAAAAALAAUAAAAqADEAAAALAAYAAAAqADIAAAAAAAcAAAARADEAAAABAAcAAAARADEAAAACAAcAAAARADEAAAADAAcAAAARADEAAAAEAAcAAAARADEAAAAFAAcAAAARADEAAAAGAAcAAAARADEAAAAHAAcAAAARADEAAAAIAAcAAAARADEAAAAJAAcAAAARADEAAAAKAAcAAAARADEAAAALAAcAAAARADEAAAAMAAcAAAARADEAAAANAAcAAAARADEAAAAOAAcAAAARADEAAAD9/wMAAAA8AAcAAAD9/wQAAAA8AAgAAAD9/wUAAAA8AAkAAAD9/wYAAAA8AAoAAAD+/wMAAAA9AAcAAAD//wMAAAA+AAcAAAD//wQAAAA+AAgAAAD//wUAAAA+AAkAAAD//wYAAAA+AAoAAAD+/wQAAAACAAIAAAD+/wUAAAACAAIAAAD+/wYAAAACAAIAAAD9/wAAAAA0ACAAAAD9/wEAAAA0ACEAAAD9/wIAAAA0ACIAAAD+/wAAAAA1ACAAAAD+/wEAAAA1ACEAAAD+/wIAAAA1ACIAAAD//wAAAAA2ACAAAAD//wEAAAA2ACEAAAD//wIAAAA2ACIAAAD6/wAAAAA0ACAAAAD6/wEAAAA0ACEAAAD6/wIAAAA0ACIAAAD7/wAAAAA1ACAAAAD7/wEAAAA1ACEAAAD7/wIAAAA1ACIAAAD8/wAAAAA2ACAAAAD8/wEAAAA2ACEAAAD8/wIAAAA2ACIAAAAPAAAAAAA0ACAAAAAPAAEAAAA0ACEAAAAPAAIAAAA0ACIAAAAQAAAAAAA1ACAAAAAQAAEAAAA1ACEAAAAQAAIAAAA1ACIAAAARAAAAAAA2ACAAAAARAAEAAAA2ACEAAAARAAIAAAA2ACIAAAASAAAAAAA0ACAAAAASAAEAAAA0ACEAAAASAAIAAAA0ACIAAAATAAAAAAA1ACAAAAATAAEAAAA1ACEAAAATAAIAAAA1ACIAAAAUAAAAAAA2ACAAAAAUAAEAAAA2ACEAAAAUAAIAAAA2ACIAAAD//wcAAAARADEAAAD+/wcAAAARADEAAAD9/wcAAAARADEAAAD8/wcAAAARADEAAAD7/wcAAAARADEAAAD6/wcAAAARADEAAAAPAAcAAAARADEAAAAQAAcAAAARADEAAAARAAcAAAARADEAAAASAAcAAAARADEAAAATAAcAAAARADEAAAAUAAcAAAARADEAAAD8/wMAAAAoADUAAAD7/wMAAAAoADUAAAD6/wMAAAAnADUAAAD6/wQAAAAnADYAAAD6/wUAAAAoADUAAAD7/wUAAAAoADUAAAD7/wQAAAAoADYAAAD8/wUAAAAoADUAAAD8/wQAAAAoADUAAAD8/wYAAAAoADUAAAD7/wYAAAAoADUAAAD6/wYAAAAoADUAAAAPAAMAAAAoADUAAAAPAAQAAAAoADUAAAAPAAUAAAAoADUAAAAPAAYAAAAoADUAAAAQAAYAAAAoADUAAAAQAAUAAAAoADUAAAAQAAQAAAAoADUAAAAQAAMAAAAoADUAAAARAAMAAAAoADUAAAARAAQAAAAoADUAAAARAAUAAAAoADUAAAARAAYAAAAoADUAAAASAAYAAAAoADUAAAASAAUAAAAoADUAAAASAAQAAAAoADUAAAASAAMAAAAoADUAAAATAAMAAAAoADUAAAATAAQAAAAoADUAAAATAAUAAAAoADUAAAATAAYAAAAoADUAAAAUAAYAAAAoADUAAAAUAAUAAAAoADUAAAAUAAQAAAAoADUAAAAUAAMAAAAoADUAAAD5/wAAAAAoADUAAAD5/wEAAAAoADUAAAD5/wIAAAAoADUAAAD5/wMAAAAoADUAAAD5/wQAAAAoADUAAAD5/wUAAAAoADUAAAD5/wYAAAAoADUAAAD5/wcAAAAoADUAAAD4/wcAAAAoADUAAAD4/wYAAAAoADUAAAD4/wUAAAAoADUAAAD4/wQAAAAoADUAAAD4/wMAAAAoADUAAAD4/wIAAAAoADUAAAD4/wEAAAAoADUAAAD4/wAAAAAoADUAAAD4////AAAoADUAAAD5////AAAoADUAAAD6////AAAoADUAAAD7////AAAoADUAAAD8////AAAoADUAAAD9////AAAoADUAAAD+////AAAoADUAAAD/////AAAoADUAAAD///7/AAAoADUAAAD+//7/AAAoADUAAAD9//7/AAAoADUAAAD8//7/AAAoADUAAAD7//7/AAAoADUAAAD6//7/AAAoADUAAAD5//7/AAAoADUAAAD4//7/AAAoADUAAAAPAP7/AAAoADUAAAAQAP7/AAAoADUAAAAQAP//AAAoADUAAAAPAP//AAAoADUAAAARAP7/AAAoADUAAAARAP//AAAoADUAAAASAP7/AAAoADUAAAASAP//AAAoADUAAAATAP7/AAAoADUAAAATAP//AAAoADUAAAAUAP7/AAAoADUAAAAUAP//AAAoADUAAAAVAP7/AAAoADUAAAAVAP//AAAoADUAAAAVAAAAAAAoADUAAAAWAAAAAAAoADUAAAAWAP//AAAoADUAAAAWAP7/AAAoADUAAAAWAAEAAAAoADUAAAAVAAEAAAAoADUAAAAVAAIAAAAoADUAAAAVAAMAAAAoADUAAAAVAAQAAAAoADUAAAAWAAQAAAAoADUAAAAWAAMAAAAoADUAAAAWAAIAAAAoADUAAAAWAAUAAAAoADUAAAAWAAYAAAAoADUAAAAWAAcAAAAoADUAAAAVAAcAAAAoADUAAAAVAAYAAAAoADUAAAAVAAUAAAAoADUAAAAXAP7/AAAoADUAAAAXAP//AAAoADUAAAAXAAAAAAAoADUAAAAXAAEAAAAoADUAAAAXAAIAAAAoADUAAAAYAAIAAAAoADUAAAAYAAEAAAAoADUAAAAYAAAAAAAoADUAAAAYAP//AAAoADUAAAAYAP7/AAAoADUAAAAYAAMAAAAoADUAAAAYAAQAAAAoADUAAAAXAAQAAAAoADUAAAAXAAUAAAAoADUAAAAXAAYAAAAoADUAAAAXAAcAAAAoADUAAAAYAAYAAAAoADUAAAAYAAUAAAAoADUAAAAYAAcAAAAoADUAAAAXAAMAAAAoADUAAAA=")
 tile_set = SubResource("TileSet_rwpj4")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="ColorRect" unique_id=91627495]
+[node name="Area2D" type="Area2D" parent="Scene" unique_id=1181558881]
+position = Vector2(837, 973)
+
+[node name="Door" type="CollisionShape2D" parent="Scene/Area2D" unique_id=1945770001]
+position = Vector2(896, -289)
+shape = SubResource("RectangleShape2D_4baxb")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Scene" unique_id=91627495]
 position = Vector2(837, 973)
 script = ExtResource("1_2o1rx")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/CharacterBody2D" unique_id=2007820625]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Scene/CharacterBody2D" unique_id=2007820625]
 position = Vector2(132, -154)
 sprite_frames = SubResource("SpriteFrames_ohvg6")
 animation = &"run"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/CharacterBody2D" unique_id=85152621]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/CharacterBody2D" unique_id=85152621]
 position = Vector2(141, -139.5)
 shape = SubResource("RectangleShape2D_orjk5")
 
-[node name="Camera2D" type="Camera2D" parent="ColorRect/CharacterBody2D" unique_id=1503551254]
+[node name="Camera2D" type="Camera2D" parent="Scene/CharacterBody2D" unique_id=1503551254]
 position = Vector2(142, -488)
 
-[node name="Area2D" type="Area2D" parent="ColorRect/CharacterBody2D" unique_id=1181558881]
+[node name="StaticBody2D" type="StaticBody2D" parent="Scene" unique_id=772845835]
 
-[node name="Door" type="CollisionShape2D" parent="ColorRect/CharacterBody2D/Area2D" unique_id=1945770001]
-position = Vector2(896, -289)
-shape = SubResource("RectangleShape2D_4baxb")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect" unique_id=772845835]
-
-[node name="Bottom" type="CollisionShape2D" parent="ColorRect/StaticBody2D" unique_id=1146581181]
+[node name="Bottom" type="CollisionShape2D" parent="Scene/StaticBody2D" unique_id=1146581181]
 position = Vector2(991, 938)
 shape = SubResource("RectangleShape2D_2o1rx")
 
-[node name="Left2" type="CollisionShape2D" parent="ColorRect/StaticBody2D" unique_id=1161162369]
+[node name="Left2" type="CollisionShape2D" parent="Scene/StaticBody2D" unique_id=1161162369]
 position = Vector2(1925, 484)
 shape = SubResource("RectangleShape2D_rwpj4")
 
-[node name="Left" type="CollisionShape2D" parent="ColorRect/StaticBody2D" unique_id=968707683]
+[node name="Left" type="CollisionShape2D" parent="Scene/StaticBody2D" unique_id=968707683]
 position = Vector2(0, 468)
 shape = SubResource("RectangleShape2D_rwpj4")
 
