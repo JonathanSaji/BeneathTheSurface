@@ -43,7 +43,7 @@ func _on_door_entered(body, door):
 		near_door = true
 		current_door = door
 		if door == angel2D:
-			hp = 0
+			hp -= 3
 		if door == rat2D:
 			hp -=1
 			update_hearts()
@@ -67,9 +67,10 @@ func update_hearts():
 		life.play("2heart")
 	elif hp == 1:
 		life.play("1heart")
+	elif hp <= 0:
+		life.play("0heart")
 		
 		
-
 func _physics_process(delta: float):
 	
 	if not is_inside_tree():

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BeneathTheSurface"
-run/main_scene="uid://bdprys7mti7b4"
+run/main_scene="uid://c5spt0qcj58f8"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
