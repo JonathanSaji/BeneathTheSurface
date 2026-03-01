@@ -6,9 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://hs3nsqejmer3" path="res://PipBoy/Pip-Run.png" id="3_orjk5"]
 [ext_resource type="Texture2D" uid="uid://lps2q8s5v7py" path="res://PipBoy/Pip-Hit.png" id="4_6hioj"]
 [ext_resource type="Texture2D" uid="uid://dds5j53wde4l0" path="res://PipBoy/Idle.png" id="4_mx85p"]
-[ext_resource type="Texture2D" uid="uid://bb2tatr7yjfrq" path="res://2026-02-28 22_42_37-the-roman-runes-alliance - File Explorer.png" id="6_rwpj4"]
 [ext_resource type="Script" uid="uid://dh3bf010ky5oa" path="res://block.gd" id="6_xp6mw"]
 [ext_resource type="FontFile" uid="uid://d3tjnf3p2p8t7" path="res://TheRomanRunesAlliance.ttf" id="8_01crl"]
+[ext_resource type="Texture2D" uid="uid://bl8guaswc6wxo" path="res://block.png" id="8_6hioj"]
+[ext_resource type="Texture2D" uid="uid://c4b7ln7xpboph" path="res://block-broken.png" id="8_845r4"]
+[ext_resource type="Texture2D" uid="uid://bc77o1kt0uwut" path="res://block-half.png" id="10_3cu1f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mx85p"]
 texture = ExtResource("2_4baxb")
@@ -1099,8 +1101,35 @@ size = Vector2(2360, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwpj4"]
 size = Vector2(28.5, 927)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_pfcga"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_845r4")
+}],
+"loop": true,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_6hioj")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_3cu1f")
+}],
+"loop": true,
+"name": &"half",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xp6mw"]
-size = Vector2(368, 254)
+size = Vector2(1091.1265, 1084.6924)
 
 [sub_resource type="Animation" id="Animation_2o1rx"]
 length = 0.001
@@ -1259,20 +1288,24 @@ shape = SubResource("RectangleShape2D_rwpj4")
 position = Vector2(0, -1080)
 script = ExtResource("6_xp6mw")
 
-[node name="20260228224237TheRomanRunesAllianceFileExplorer" type="Sprite2D" parent="Scene/AttackArea2D" unique_id=307823226]
-position = Vector2(1274, 1794.0001)
-scale = Vector2(2.1776047, 1.8741915)
-texture = ExtResource("6_rwpj4")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Scene/AttackArea2D" unique_id=1481598814]
+position = Vector2(1205.9999, 1892.9999)
+scale = Vector2(0.16590069, 0.15119489)
+sprite_frames = SubResource("SpriteFrames_pfcga")
+animation = &"full"
+autoplay = "full"
 
 [node name="Block" type="CollisionShape2D" parent="Scene/AttackArea2D" unique_id=1437136832]
-position = Vector2(1273, 1791)
+position = Vector2(1204.4907, 1892)
+scale = Vector2(0.16590069, 0.15119489)
 shape = SubResource("RectangleShape2D_xp6mw")
 
-[node name="Label2" type="Label" parent="Scene/AttackArea2D" unique_id=1355731567]
-offset_left = 1148.0
-offset_top = 1710.0
-offset_right = 1902.0
-offset_bottom = 1872.0
+[node name="Label2" type="Label" parent="Scene" unique_id=1355731567]
+layout_mode = 0
+offset_left = 1101.0
+offset_top = 534.0
+offset_right = 1855.0
+offset_bottom = 696.0
 theme_override_fonts/font = ExtResource("8_01crl")
 theme_override_font_sizes/font_size = 69
 text = "CLICK TO

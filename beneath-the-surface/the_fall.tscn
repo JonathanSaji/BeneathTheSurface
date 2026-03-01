@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://comgpamwu00yj"]
 
 [ext_resource type="FontFile" uid="uid://d3tjnf3p2p8t7" path="res://TheRomanRunesAlliance.ttf" id="1_drsb6"]
+[ext_resource type="Script" uid="uid://daabh1iuirrg3" path="res://the_fall.gd" id="1_yra52"]
 [ext_resource type="Texture2D" uid="uid://bdku0q0o74c1k" path="res://PipBoy/Pip-Fall.png" id="2_u84h0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yra52"]
@@ -107,6 +108,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yra52")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=887670230]
 layout_mode = 0
@@ -126,10 +128,10 @@ theme_override_font_sizes/font_size = 100
 text = "AHH HHHH HHHHHHH HH H HHH HH HH HHHH H HH"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=709477347]
-position = Vector2(948, 1176)
+position = Vector2(911.99994, -101)
 scale = Vector2(1.0294148, 1)
 sprite_frames = SubResource("SpriteFrames_xunlu")
-frame_progress = 0.023719896
+frame_progress = 0.14633697
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=541005773]
 libraries/ = SubResource("AnimationLibrary_6quko")

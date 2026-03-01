@@ -1,12 +1,29 @@
 extends StaticBody2D
 
-@export var hp = 1
+@onready var anim = $AnimatedSprite2D
+
+@export var hp = 2
 
 func hit():
 	hp -= 1
-	if hp <= 0:
+	if hp < 0:
 		break_block()
+	elif hp == 1:
+		half_block()
+	elif hp == 0:
+		broken_block()
+	else:
+		full_block()
 
 func break_block():
-	# optionally play animation or particles here
 	queue_free()
+	
+func full_block():
+	anim.play("full")
+
+func half_block():
+	anim.play("half")
+	
+func broken_block():
+	anim.play("broken")
+	
