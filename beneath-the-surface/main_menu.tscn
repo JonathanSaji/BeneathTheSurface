@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bdprys7mti7b4"]
 
 [ext_resource type="Script" uid="uid://lw03mkieskff" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="FontFile" uid="uid://d3tjnf3p2p8t7" path="res://TheRomanRunesAlliance.ttf" id="2_7vrkn"]
 
 [sub_resource type="Animation" id="Animation_06t4h"]
 length = 0.001
@@ -61,11 +62,12 @@ layout_mode = 0
 offset_left = 650.0
 offset_top = 300.0
 offset_right = 1307.0
-offset_bottom = 695.0001
+offset_bottom = 806.0
 theme_override_constants/separation = 40
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer" unique_id=481520046]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7vrkn")
 theme_override_font_sizes/font_size = 72
 text = "The Moles Are Coming
 "

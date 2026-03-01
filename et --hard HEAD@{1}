@@ -1,0 +1,90 @@
+[33mcommit 5711a9b4d4e9c14512e790d5e1b56fa7d458e63d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Jonathan Saji <jonathansaji2009@gmail.com>
+Date:   Sat Feb 28 18:31:19 2026 -0500
+
+    background assets
+
+[33mcommit 44424b1e41eea789a5d0dfe073edfd4b224bf0a2[m
+Author: Sebx00 <sc029422@gmail.com>
+Date:   Sat Feb 28 18:27:21 2026 -0500
+
+    camera follows player
+
+[33mcommit 97eb4fe0e3c3efc27ce2ff9f172878f6c6659301[m
+Author: Jonathan Saji <jonathansaji2009@gmail.com>
+Date:   Sat Feb 28 17:53:49 2026 -0500
+
+    Animated Character
+
+[33mcommit a7d214854744d4363554279b860d477b60356d13[m
+Author: Sebx00 <sc029422@gmail.com>
+Date:   Sat Feb 28 17:48:57 2026 -0500
+
+    animation between scenes
+
+[33mcommit 5178eefd32c0637e70b4357a62060896b8dd5054[m
+Author: Sebx00 <sc029422@gmail.com>
+Date:   Sat Feb 28 17:41:32 2026 -0500
+
+    background for prolougue
+
+[33mcommit d9a37db4020885e8e2ff1fc70cef2d4d2f6def5f[m
+Merge: b16fb08 8677db6
+Author: Jonathan Saji <jonathansaji2009@gmail.com>
+Date:   Sat Feb 28 17:36:36 2026 -0500
+
+    movement
+
+[33mcommit b16fb08a6dd1932ac5d4775914fca5e904b2dd8d[m
+Author: Jonathan Saji <jonathansaji2009@gmail.com>
+Date:   Sat Feb 28 17:30:53 2026 -0500
+
+    movement added
+
+[33mcommit 8677db681fa1fad62d7e4db1fa867dde618da3ba[m
+Author: Sebx00 <sc029422@gmail.com>
+Date:   Sat Feb 28 17:30:50 2026 -0500
+
+    Moved anim to other scene
+
+[33mcommit 074b8a3c628df87961ef0402294ba6979ecfba96[m
+Author: Sebx00 <sc029422@gmail.com>
+Date:   Sat Feb 28 16:42:41 2026 -0500
+
+    Switch scenes to the prologue
+
+[33mcommit b805310fbf630217ce92fcda28b962fa72e20810[m
+Author: Jonathan Saji <jonathansaji2009@gmail.com>
+Date:   Sat Feb 28 16:29:54 2026 -0500
+
+    added prologue scene
+
+[33mcommit ccdf1629a80a038112c255ed2bd28ec1e0ba7f35[m
+Author: Sebx00 <sc029422@gmail.com>
+Date:   Sat Feb 28 16:29:05 2026 -0500
+
+    menu scroll anim
+
+[33mcommit d92b76fec7b98bd649518c6056f0464d8526b108[m
+Author: Jonathan Saji <127805037+JonathanSaji@users.noreply.github.com>
+Date:   Sat Feb 28 15:46:27 2026 -0500
+
+    Create LICENSE
+
+[33mcommit 258750e9b2eb7ca1d6536886d9d3e59072f3e157[m
+Author: Jonathan Saji <jonathansaji2009@gmail.com>
+Date:   Sat Feb 28 15:41:56 2026 -0500
+
+    basic menu
+
+[33mcommit 628d18201a21461d258a238fd3916ff8c5dfdac5[m
+Author: Jonathan Saji <jonathansaji2009@gmail.com>
+Date:   Sat Feb 28 15:40:35 2026 -0500
+
+    basic menu
+
+[33mcommit d059627e418fc15b762446aee37ad9bbdb94c72b[m
+Author: Jonathan Saji <jonathansaji2009@gmail.com>
+Date:   Sat Feb 28 15:11:29 2026 -0500
+
+    base code
