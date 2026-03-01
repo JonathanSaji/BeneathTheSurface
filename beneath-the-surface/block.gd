@@ -6,7 +6,7 @@ extends StaticBody2D
 
 func hit():
 	hp -= 1
-	if hp < 0:
+	if hp <= 0:
 		break_block()
 	elif hp == 1:
 		half_block()

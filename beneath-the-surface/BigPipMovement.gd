@@ -1,4 +1,5 @@
 extends CharacterBody2D
+
 const SPEED = 600.0
 const JUMP_VELOCITY = -700.0
 const GRAVITY = 980.0
@@ -8,30 +9,25 @@ const GRAVITY = 980.0
 @onready var exit2D = get_node("/root/Underground/Exit")
 @onready var angel2D = get_node("/root/Underground/Angel")
 @onready var rat2D = get_node("/root/Underground/Rat1")
-
 @onready var attack_area = $hitbox
 
-var choice = null
 var near_door = false
 var entering_door = false
 var current_door = null
 var numJump = 0
 var hp = 3
+var is_dead = false
+var was_on_floor = true
 
 func _ready() -> void:
-	
 	exit2D.body_entered.connect(func(body): _on_door_entered(body, exit2D))
 	exit2D.body_exited.connect(func(body): _on_door_exited(body, exit2D))
-	
 	angel2D.body_entered.connect(func(body): _on_door_entered(body, angel2D))
+	angel2D.body_exited.connect(func(body): _on_door_exited(body, angel2D))
 	rat2D.body_entered.connect(func(body): _on_door_entered(body, rat2D))
-	
+	rat2D.body_exited.connect(func(body): _on_door_exited(body, rat2D))
 	anim.animation_finished.connect(_on_animation_finished)
-	
-	#print("Door name: ", door2D.name)
-	print("Exit name: ", exit2D.name)
-	print("Angel: ", angel2D.name)
-	print("Rat: ", rat2D.name)
+	update_hearts()
 
 func _on_animation_finished():
 	if anim.animation == "in":
@@ -39,88 +35,97 @@ func _on_animation_finished():
 		enter_door()
 
 func _on_door_entered(body, door):
-	if body == self:
-		near_door = true
-		current_door = door
-		if door == angel2D:
-			hp -= 3
-		if door == rat2D:
-			hp -=1
-			update_hearts()
-		print("Near door: ", door.name)
+	if body != self:
+		return
+	near_door = true
+	current_door = door
+	if door == angel2D:
+		take_damage(3)
+	elif door == rat2D:
+		take_damage(1)
 
 func _on_door_exited(body, door):
-	if body == self:
-		near_door = false
-		current_door = null
-		print("Left door: ", door.name)
+	if body != self:
+		return
+	near_door = false
+	current_door = null
+
+func take_damage(amount):
+	if is_dead:
+		return
+	hp -= amount
+	update_hearts()
 
 func enter_door():
-	print("Entering door: ", current_door.name if current_door else "unknown")
+	if current_door == null:
+		return
 	if current_door == exit2D:
 		get_tree().change_scene_to_file("res://main_menu.tscn")
-		
+
 func update_hearts():
-	if hp == 3:
-		life.play("3heart")
-	elif hp == 2:
-		life.play("2heart")
-	elif hp == 1:
-		life.play("1heart")
-	elif hp <= 0:
-		life.play("0heart")
-		
-		
+	var frame = clampi(hp, 0, 3)
+	life.play(str(frame) + "heart")
+
 func _physics_process(delta: float):
-	
-	if not is_inside_tree():
+	if not is_inside_tree() or is_dead:
 		return
-		
+
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
-	
+
+	# Attack
 	if Input.is_action_just_pressed("attack"):
+		anim.play("attack")
 		for body in attack_area.get_overlapping_bodies():
 			if body.has_method("hit"):
-				anim.play("attack")
+				print("yo")
 				body.hit()
 
+	# Door entry
 	if entering_door:
 		velocity.x = 0
+		move_and_slide()
 		return
-	
-	else:
-		if Input.is_action_just_pressed("space") and is_on_floor():
+
+	# Death
+	if hp <= 0:
+		is_dead = true
+		anim.play("death")
+		await anim.animation_finished
+		get_tree().call_deferred("reload_current_scene")
+		return
+
+	# Jump
+	var on_floor = is_on_floor()
+	if Input.is_action_just_pressed("space"):
+		if on_floor:
 			velocity.y = JUMP_VELOCITY
-		elif Input.is_action_just_pressed("space") and not is_on_floor() and numJump == 0:
+		elif numJump == 0:
 			numJump += 1
-			velocity.y = JUMP_VELOCITY/1.2
+			velocity.y = JUMP_VELOCITY / 1.2
 
-		
-		if is_on_floor():
-			numJump = 0
-		else:
-			anim.play("jump")
-		
-		if hp <= 0:
-			anim.play("death")
-			await anim.animation_finished
-			get_tree().call_deferred("reload_current_scene")
-			return
-			
-		var direction = Input.get_axis("left", "right")
-		if direction != 0:
-			velocity.x = direction * SPEED
-			if is_on_floor():
-				anim.play("run")
-		else:
-			if is_on_floor():
-				anim.play("idle")
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+	if on_floor:
+		numJump = 0
 
-		if direction > 0:
-			anim.flip_h = false
-		elif direction < 0:
-			anim.flip_h = true
-		
+	# Door interact
+	if near_door and Input.is_action_just_pressed("forward"):
+		entering_door = true
+		anim.play("in")
+
+	# Movement & animation
+	var direction = Input.get_axis("left", "right")
+	if direction != 0:
+		velocity.x = direction * SPEED
+		anim.flip_h = direction < 0
+		if on_floor:
+			anim.play("run")
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if on_floor:
+			anim.play("idle")
+
+	if not on_floor:
+		anim.play("jump")
+
+	was_on_floor = on_floor
 	move_and_slide()
