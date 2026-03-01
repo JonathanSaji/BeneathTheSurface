@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brs3a5sxwvqem"
-path="res://.godot/imported/crossbeam-rod.png-04fec2b4ea81cb8d2bceec4bf2b2fe03.ctex"
+uid="uid://m6mwp3l1ydih"
+path="res://.godot/imported/crossbeams (2).png-172c05ae07e40ed0cecaedd5cb313e9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/crossbeam-rod.png"
-dest_files=["res://.godot/imported/crossbeam-rod.png-04fec2b4ea81cb8d2bceec4bf2b2fe03.ctex"]
+source_file="res://assets/crossbeams (2).png"
+dest_files=["res://.godot/imported/crossbeams (2).png-172c05ae07e40ed0cecaedd5cb313e9e.ctex"]
 
 [params]
 

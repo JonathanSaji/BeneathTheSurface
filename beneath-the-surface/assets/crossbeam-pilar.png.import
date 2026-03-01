@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1s62e7ee31lc"
-path="res://.godot/imported/crossbeams.png-8f8c4f07ddce9ab5e0ab229a43ed14bf.ctex"
+uid="uid://cn8mxiyedu4oq"
+path="res://.godot/imported/crossbeam-pilar.png-507bb3384c18b520bba030c73013321b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/crossbeams.png"
-dest_files=["res://.godot/imported/crossbeams.png-8f8c4f07ddce9ab5e0ab229a43ed14bf.ctex"]
+source_file="res://assets/crossbeam-pilar.png"
+dest_files=["res://.godot/imported/crossbeam-pilar.png-507bb3384c18b520bba030c73013321b.ctex"]
 
 [params]
 

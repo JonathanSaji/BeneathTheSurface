@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtuwq644an5mr"
-path="res://.godot/imported/crossbeams-corner.png-13e89152fcb4de69af0516f4b91f01c5.ctex"
+uid="uid://c3uskrthadmwl"
+path="res://.godot/imported/Attack-Big-Pip.png-48b2d5758d494170710b8318357e046b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/crossbeams-corner.png"
-dest_files=["res://.godot/imported/crossbeams-corner.png-13e89152fcb4de69af0516f4b91f01c5.ctex"]
+source_file="res://PipMan/Attack-Big-Pip.png"
+dest_files=["res://.godot/imported/Attack-Big-Pip.png-48b2d5758d494170710b8318357e046b.ctex"]
 
 [params]
 
