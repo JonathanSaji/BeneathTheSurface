@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://cbjipr3g05aru" path="res://PixelFantasy_Caves_1.0/mainlev_build.png" id="1_rpe3e"]
 [ext_resource type="Script" uid="uid://hvravopy2vxp" path="res://templeMovement.gd" id="2_ktr65"]
 [ext_resource type="Texture2D" uid="uid://dds5j53wde4l0" path="res://PipBoy/Idle.png" id="4_8hjng"]
-[ext_resource type="FontFile" uid="uid://d3tjnf3p2p8t7" path="res://TheRomanRunesAlliance.ttf" id="6_xrfim"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8hjng"]
 texture = ExtResource("1_rpe3e")
@@ -1063,6 +1062,8 @@ size = Vector2(25.5, 927)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hjng"]
 size = Vector2(32.5, 927)
 
+[sub_resource type="SystemFont" id="SystemFont_8hjng"]
+
 [node name="Temple" type="Node2D" unique_id=1038785440]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1790636657]
@@ -1113,12 +1114,12 @@ position = Vector2(0, 468)
 shape = SubResource("RectangleShape2D_8hjng")
 
 [node name="Label" type="Label" parent="." unique_id=357865822]
-offset_left = 655.0
-offset_top = 445.0
-offset_right = 1793.0
-offset_bottom = 598.0
+offset_left = 735.0
+offset_top = 453.0
+offset_right = 1873.0
+offset_bottom = 656.0
 theme_override_colors/font_color = Color(0.080783255, 0.080783375, 0.08078327, 1)
-theme_override_fonts/font = ExtResource("6_xrfim")
+theme_override_fonts/font = SubResource("SystemFont_8hjng")
 theme_override_font_sizes/font_size = 100
 text = "Statues Are 
 Checkpoints"

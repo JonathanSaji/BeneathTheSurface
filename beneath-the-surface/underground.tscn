@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://c5spt0qcj58f8"]
+[gd_scene format=4 uid="uid://bf42cne6woqs"]
 
 [ext_resource type="Texture2D" uid="uid://cbjipr3g05aru" path="res://PixelFantasy_Caves_1.0/mainlev_build.png" id="1_4pajg"]
 [ext_resource type="Texture2D" uid="uid://m6mwp3l1ydih" path="res://assets/crossbeams (2).png" id="2_6xgwd"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://hs3nsqejmer3" path="res://PipBoy/Pip-Run.png" id="5_xggcg"]
 [ext_resource type="Texture2D" uid="uid://pu43f6ia7ss8" path="res://PipMan/Pip-Walk.png" id="6_qbb5w"]
 [ext_resource type="Texture2D" uid="uid://dplp6ara4g3m4" path="res://PipMan/Idle (1).png" id="7_6xgwd"]
+[ext_resource type="Texture2D" uid="uid://bgliky7aeqv05" path="res://PipMan/Pip-Death.png" id="7_h7tmf"]
 [ext_resource type="Texture2D" uid="uid://dumjoxtq28wnb" path="res://PixelAngelStatueLite/11.png" id="10_xdn7w"]
 [ext_resource type="Texture2D" uid="uid://0wscu4cb4kck" path="res://assets/crossbeam-rod (1).png" id="11_xdn7w"]
 [ext_resource type="Texture2D" uid="uid://c3y8n56yul1ih" path="res://assets/crossbeams-corner.png" id="12_h7tmf"]
@@ -929,6 +930,19 @@ texture = ExtResource("1_4pajg")
 [sub_resource type="TileSet" id="TileSet_naa4x"]
 sources/0 = SubResource("TileSetAtlasSource_udmqc")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_yyl7v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_xdn7w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h7tmf"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_xggcg"]
 atlas = ExtResource("3_b222s")
 region = Rect2(0, 432, 108, 216)
@@ -943,6 +957,22 @@ region = Rect2(216, 432, 108, 216)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xdn7w"]
 atlas = ExtResource("3_b222s")
+region = Rect2(324, 432, 108, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyl7v"]
+atlas = ExtResource("7_h7tmf")
+region = Rect2(0, 432, 108, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q370"]
+atlas = ExtResource("7_h7tmf")
+region = Rect2(108, 432, 108, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3d7y"]
+atlas = ExtResource("7_h7tmf")
+region = Rect2(216, 432, 108, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cb60e"]
+atlas = ExtResource("7_h7tmf")
 region = Rect2(324, 432, 108, 216)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qvb51"]
@@ -1022,6 +1052,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_yyl7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4q370")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3d7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cb60e")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qvb51")
 }, {
 "duration": 1.0,
@@ -1058,6 +1105,23 @@ animations = [{
 }],
 "loop": false,
 "name": &"in",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cb60e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3d7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4q370")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyl7v")
+}],
+"loop": true,
+"name": &"revive",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1110,20 +1174,6 @@ size = Vector2(9.908408, 203.96532)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0boax"]
 size = Vector2(273.5, 459)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yyl7v"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_xdn7w")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_la4fl"]
-size = Vector2(779.5156, 857.3685)
 
 [sub_resource type="Animation" id="Animation_6xgwd"]
 length = 0.001
@@ -1220,9 +1270,9 @@ tile_map_data = PackedByteArray("AAABAAMAAAA8AAEAAAABAAQAAAA8AAIAAAABAAUAAAA8AAM
 tile_set = SubResource("TileSet_naa4x")
 
 [node name="Label2" type="Label" parent="." unique_id=1280293238]
-offset_left = 1974.0
+offset_left = 2057.0
 offset_top = -306.0
-offset_right = 2665.0
+offset_right = 2748.0
 offset_bottom = -29.0
 theme_override_fonts/font = ExtResource("2_qbb5w")
 theme_override_font_sizes/font_size = 100
@@ -1239,14 +1289,27 @@ theme_override_font_sizes/font_size = 100
 text = "I need to 
 get out..."
 
+[node name="Angel" type="Area2D" parent="." unique_id=1989611036]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Angel" unique_id=168617876]
+position = Vector2(90, -319)
+scale = Vector2(0.4580078, 0.453125)
+sprite_frames = SubResource("SpriteFrames_yyl7v")
+frame_progress = 0.84450394
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Angel" unique_id=2020314532]
+position = Vector2(90.41562, -321.68887)
+scale = Vector2(7.49801, 13.133125)
+shape = SubResource("CapsuleShape2D_h7tmf")
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=89160398]
-position = Vector2(833, 946)
+position = Vector2(175, 963)
 script = ExtResource("3_qbb5w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1790029537]
 position = Vector2(137, -158)
 sprite_frames = SubResource("SpriteFrames_pvodk")
-animation = &"run"
+animation = &"revive"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=850641067]
@@ -1317,19 +1380,6 @@ position = Vector2(1352, 979)
 [node name="Door" type="CollisionShape2D" parent="Exit" unique_id=493908666]
 position = Vector2(-1027, -296)
 shape = SubResource("RectangleShape2D_0boax")
-
-[node name="Angel" type="Area2D" parent="." unique_id=1989611036]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Angel" unique_id=168617876]
-position = Vector2(90, -319)
-scale = Vector2(0.4580078, 0.453125)
-sprite_frames = SubResource("SpriteFrames_yyl7v")
-frame_progress = 0.84450394
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Angel" unique_id=2020314532]
-position = Vector2(90.41562, -321.68887)
-scale = Vector2(0.4580078, 0.453125)
-shape = SubResource("RectangleShape2D_la4fl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1638024463]
 libraries/ = SubResource("AnimationLibrary_h7tmf")

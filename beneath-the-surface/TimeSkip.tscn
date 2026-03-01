@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://hs3nsqejmer3" path="res://PipBoy/Pip-Run.png" id="1_7jj3t"]
 [ext_resource type="Script" uid="uid://co4rh866vhk81" path="res://time_skip.gd" id="1_8ijrd"]
 [ext_resource type="Texture2D" uid="uid://pu43f6ia7ss8" path="res://PipMan/Pip-Walk.png" id="2_8ijrd"]
-[ext_resource type="FontFile" uid="uid://d3tjnf3p2p8t7" path="res://TheRomanRunesAlliance.ttf" id="3_0t56m"]
 [ext_resource type="Script" uid="uid://b2406hd7bldgb" path="res://rich_text_label.gd" id="4_2v6k0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qh4kf"]
@@ -91,6 +90,14 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="SystemFont" id="SystemFont_7jj3t"]
+
+[sub_resource type="SystemFont" id="SystemFont_8ijrd"]
+
+[sub_resource type="SystemFont" id="SystemFont_0t56m"]
+
+[sub_resource type="SystemFont" id="SystemFont_2v6k0"]
 
 [sub_resource type="Animation" id="Animation_ubgpu"]
 resource_name = "Full Animation"
@@ -263,29 +270,29 @@ offset_left = 841.0
 offset_top = 309.0
 offset_right = 983.74
 offset_bottom = 541.12
-theme_override_fonts/normal_font = ExtResource("3_0t56m")
+theme_override_fonts/normal_font = SubResource("SystemFont_7jj3t")
 theme_override_font_sizes/normal_font_size = 100
 script = ExtResource("4_2v6k0")
 
 [node name="Taller" type="Label" parent="." unique_id=1340086014]
 layout_mode = 0
-offset_left = 850.0
-offset_top = 578.0
-offset_right = 1928.0
-offset_bottom = 1043.0063
-theme_override_fonts/font = ExtResource("3_0t56m")
+offset_left = 869.0
+offset_top = 1106.0
+offset_right = 1947.0
+offset_bottom = 1571.0063
+theme_override_fonts/font = SubResource("SystemFont_8ijrd")
 theme_override_font_sizes/font_size = 100
-text = "He got Taller"
+text = "HE GOT TALLER"
 
 [node name="Rebellious" type="Label" parent="." unique_id=1154019544]
 layout_mode = 0
-offset_left = 851.0
-offset_top = 715.0
-offset_right = 1929.0
-offset_bottom = 1180.0061
-theme_override_fonts/font = ExtResource("3_0t56m")
+offset_left = 805.0
+offset_top = 1102.0
+offset_right = 1883.0
+offset_bottom = 1567.0061
+theme_override_fonts/font = SubResource("SystemFont_0t56m")
 theme_override_font_sizes/font_size = 100
-text = "He became rebelious...."
+text = "HE BECAME CURIOUS...."
 
 [node name="Wider" type="Label" parent="." unique_id=1958689979]
 layout_mode = 0
@@ -293,9 +300,9 @@ offset_left = 843.0
 offset_top = 443.0
 offset_right = 1921.0
 offset_bottom = 908.0059
-theme_override_fonts/font = ExtResource("3_0t56m")
+theme_override_fonts/font = SubResource("SystemFont_2v6k0")
 theme_override_font_sizes/font_size = 100
-text = "Pip got wider
+text = "PIP GOT WIDER
 "
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=176817216]

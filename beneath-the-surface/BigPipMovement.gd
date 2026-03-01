@@ -24,7 +24,6 @@ func _ready() -> void:
 	exit2D.body_exited.connect(func(body): _on_door_exited(body, exit2D))
 	
 	angel2D.body_entered.connect(func(body): _on_door_entered(body, angel2D))
-	angel2D.body_exited.connect(func(body): _on_door_exited(body, angel2D))
 	
 	anim.animation_finished.connect(_on_animation_finished)
 	
@@ -59,6 +58,10 @@ func enter_door():
 		get_tree().change_scene_to_file("res://main_menu.tscn")
 
 func _physics_process(delta: float):
+	
+	if not is_inside_tree():
+		return
+		
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
 	
@@ -86,8 +89,13 @@ func _physics_process(delta: float):
 			numJump = 0
 		
 		if hp <= 0:
-			get_tree().change_scene_to_file("res://underground.tscn")
-		
+			anim.play("death")
+			await anim.animation_finished
+			get_tree().call_deferred("reload_current_scene")
+			anim.play("revive")
+			await anim.animation_finished
+			return
+			
 		var direction = Input.get_axis("left", "right")
 		if direction != 0:
 			velocity.x = direction * SPEED
