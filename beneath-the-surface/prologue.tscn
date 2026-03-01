@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://b0cgj87dhqikg"]
+[gd_scene format=4 uid="uid://co84fslw88jdd"]
 
 [ext_resource type="Script" uid="uid://dn1fa3k45ao1u" path="res://movement.gd" id="1_2o1rx"]
 [ext_resource type="Script" uid="uid://b8yddse4ypt65" path="res://prologue.gd" id="1_orjk5"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dds5j53wde4l0" path="res://PipBoy/Idle.png" id="4_mx85p"]
 [ext_resource type="Script" uid="uid://dh3bf010ky5oa" path="res://block.gd" id="6_xp6mw"]
 [ext_resource type="FontFile" uid="uid://d3tjnf3p2p8t7" path="res://TheRomanRunesAlliance.ttf" id="8_01crl"]
+[ext_resource type="AudioStream" uid="uid://tlshrxl2gfpv" path="res://RBY 102 Opening (Part 2).ogg" id="8_3cu1f"]
 [ext_resource type="Texture2D" uid="uid://bl8guaswc6wxo" path="res://block.png" id="8_6hioj"]
 [ext_resource type="Texture2D" uid="uid://c4b7ln7xpboph" path="res://block-broken.png" id="8_845r4"]
 [ext_resource type="Texture2D" uid="uid://bc77o1kt0uwut" path="res://block-half.png" id="10_3cu1f"]
@@ -1282,6 +1283,11 @@ position = Vector2(142, -488)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/CharacterBody2D/hitbox" unique_id=696720664]
 position = Vector2(205, -139)
 shape = SubResource("RectangleShape2D_01crl")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="Scene/CharacterBody2D" unique_id=1478403953]
+stream = ExtResource("8_3cu1f")
+volume_db = 14.579
+autoplay = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Scene" unique_id=772845835]
 

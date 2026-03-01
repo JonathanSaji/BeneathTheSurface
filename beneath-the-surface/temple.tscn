@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cbjipr3g05aru" path="res://PixelFantasy_Caves_1.0/mainlev_build.png" id="1_rpe3e"]
 [ext_resource type="Script" uid="uid://hvravopy2vxp" path="res://templeMovement.gd" id="2_ktr65"]
 [ext_resource type="Texture2D" uid="uid://dds5j53wde4l0" path="res://PipBoy/Idle.png" id="4_8hjng"]
+[ext_resource type="AudioStream" uid="uid://tlshrxl2gfpv" path="res://RBY 102 Opening (Part 2).ogg" id="6_xrfim"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8hjng"]
 texture = ExtResource("1_rpe3e")
@@ -1098,6 +1099,11 @@ shape = SubResource("RectangleShape2D_ktr65")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1299719986]
 position = Vector2(146, -492)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1256267075]
+stream = ExtResource("6_xrfim")
+volume_db = 14.579
+autoplay = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1741540676]
 

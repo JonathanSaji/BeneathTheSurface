@@ -8,6 +8,8 @@ const GRAVITY = 980.0
 @onready var exit2D = get_node("/root/Prologue/Scene/Exit")
 @onready var attack_area = $hitbox
 
+@onready var music = $Music
+
 var choice = null
 var near_door = false
 var entering_door = false
@@ -20,7 +22,7 @@ func _ready() -> void:
 	exit2D.body_entered.connect(func(body): _on_door_entered(body, exit2D))
 	exit2D.body_exited.connect(func(body): _on_door_exited(body, exit2D))
 	anim.animation_finished.connect(_on_animation_finished)
-	
+	music.play()
 	print("Door name: ", door2D.name)
 	print("Exit name: ", exit2D.name)
 

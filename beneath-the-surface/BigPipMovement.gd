@@ -11,6 +11,11 @@ const GRAVITY = 980.0
 @onready var rat2D = get_node("/root/Underground/Rat1")
 @onready var attack_area = $hitbox
 
+@onready var jumpStream = $JumpStream
+@onready var hurtStream = $HurtStream
+@onready var music = $Music
+
+
 
 var near_door = false
 var entering_door = false
@@ -28,6 +33,7 @@ func _ready() -> void:
 	rat2D.body_entered.connect(func(body): _on_door_entered(body, rat2D))
 	rat2D.body_exited.connect(func(body): _on_door_exited(body, rat2D))
 	anim.animation_finished.connect(_on_animation_finished)
+	music.play()
 	update_hearts()
 
 func _on_animation_finished():
@@ -52,6 +58,7 @@ func _on_door_exited(body, door):
 	current_door = null
 
 func take_damage(amount):
+	hurtStream.play()
 	if is_dead:
 		return
 	hp -= amount
@@ -81,7 +88,11 @@ func _physics_process(delta: float):
 		for body in attack_area.get_overlapping_bodies():
 			if body.has_method("hit"):
 				body.hit()
-
+			
+				
+	for body in attack_area.get_overlapping_bodies():
+		if body.has_method("death"):
+			hp = 0
 	# Door entry
 	if entering_door:
 		velocity.x = 0
@@ -100,9 +111,11 @@ func _physics_process(delta: float):
 	var on_floor = is_on_floor()
 	if Input.is_action_just_pressed("space"):
 		if on_floor:
+			jumpStream.play()
 			velocity.y = JUMP_VELOCITY
 		elif numJump == 0:
 			numJump += 1
+			jumpStream.play()
 			velocity.y = JUMP_VELOCITY / 1.2
 
 	if on_floor:

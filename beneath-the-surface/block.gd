@@ -1,8 +1,7 @@
 extends StaticBody2D
 
 @onready var anim = $AnimatedSprite2D
-
-@export var hp = 2
+@export var hp = 3
 
 func hit():
 	hp -= 1

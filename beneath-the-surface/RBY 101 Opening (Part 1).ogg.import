@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://0s082pyxuqj7"
+path="res://.godot/imported/RBY 101 Opening (Part 1).ogg-7af4df727969d6f92c596675674a0d34.oggvorbisstr"
+
+[deps]
+
+source_file="res://RBY 101 Opening (Part 1).ogg"
+dest_files=["res://.godot/imported/RBY 101 Opening (Part 1).ogg-7af4df727969d6f92c596675674a0d34.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
