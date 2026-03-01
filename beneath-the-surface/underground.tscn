@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bf42cne6woqs"]
+[gd_scene format=4 uid="uid://c5spt0qcj58f8"]
 
 [ext_resource type="Texture2D" uid="uid://cbjipr3g05aru" path="res://PixelFantasy_Caves_1.0/mainlev_build.png" id="1_4pajg"]
 [ext_resource type="Texture2D" uid="uid://m6mwp3l1ydih" path="res://assets/crossbeams (2).png" id="2_6xgwd"]
@@ -18,8 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://byqqfrftch72f" path="res://hearts/2026-03-01_05_47_02-underground.tscn_-_BeneathTheSurface_-_Godot_Engine-removebg-preview.png" id="15_la4fl"]
 [ext_resource type="Texture2D" uid="uid://vp8krahk67q0" path="res://hearts/2026-03-01_05_46_15-underground.tscn_-_BeneathTheSurface_-_Godot_Engine-removebg-preview.png" id="16_c3syi"]
 [ext_resource type="Texture2D" uid="uid://eqe37xia64yk" path="res://hearts/2026-03-01_05_45_20-underground.tscn_-_BeneathTheSurface_-_Godot_Engine-removebg-preview.png" id="17_r4jq7"]
+[ext_resource type="Script" uid="uid://dfgna710qkiuv" path="res://collect.gd" id="18_3fduj"]
 [ext_resource type="Texture2D" uid="uid://cirwbpisiej2a" path="res://assets/key.png" id="18_ud1dr"]
 [ext_resource type="Texture2D" uid="uid://bu1y4jv3mx83v" path="res://pixel-door.png" id="19_cb60e"]
+[ext_resource type="Script" uid="uid://craib3jb7gook" path="res://unlock_lock.gd" id="20_rhpd1"]
 [ext_resource type="Script" uid="uid://dh3bf010ky5oa" path="res://block.gd" id="20_ud1dr"]
 [ext_resource type="Texture2D" uid="uid://c4b7ln7xpboph" path="res://block-broken.png" id="21_3fduj"]
 [ext_resource type="Texture2D" uid="uid://bl8guaswc6wxo" path="res://block.png" id="22_rhpd1"]
@@ -1247,6 +1249,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_3fduj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_ud1dr")
+}],
+"loop": true,
+"name": &"KeyShown",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"NoKeyShown",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cb60e"]
 size = Vector2(50, 171)
 
@@ -1254,7 +1272,7 @@ size = Vector2(50, 171)
 size = Vector2(15.703253, 8.797598)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fduj"]
-size = Vector2(22.245998, 8.797598)
+size = Vector2(28.217001, 8.797598)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhpd1"]
 size = Vector2(22.245998, 8.797598)
@@ -1282,6 +1300,15 @@ size = Vector2(27.085865, 23.15157)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1stl"]
 size = Vector2(115.915375, 23.15157)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xb5gr"]
+size = Vector2(262, 110)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xb5gr"]
+load_path = "res://.godot/imported/lock.png-962ebed8d2713bfc3a87b85adb53c15d.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3agb"]
+size = Vector2(725, 561)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0boax"]
 size = Vector2(273.5, 459)
@@ -1505,6 +1532,13 @@ sprite_frames = SubResource("SpriteFrames_4q370")
 animation = &"1heart"
 autoplay = "3heart"
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CharacterBody2D/Camera2D" unique_id=722943896]
+position = Vector2(-547, -462.00003)
+scale = Vector2(0.1695772, 0.11764707)
+sprite_frames = SubResource("SpriteFrames_3fduj")
+animation = &"NoKeyShown"
+autoplay = "NoKeyShown"
+
 [node name="hitbox" type="Area2D" parent="CharacterBody2D" unique_id=271429410]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/hitbox" unique_id=151991134]
@@ -1523,7 +1557,7 @@ scale = Vector2(23.111689, 5.3992023)
 shape = SubResource("RectangleShape2D_vktki")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="BlockCollisions" unique_id=1748434888]
-position = Vector2(-510.07123, -100.00001)
+position = Vector2(-446.00003, -106.00001)
 scale = Vector2(23.111689, 5.3992023)
 shape = SubResource("RectangleShape2D_3fduj")
 
@@ -1572,14 +1606,33 @@ scale = Vector2(23.111689, 5.3992023)
 shape = SubResource("RectangleShape2D_tqw8v")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="BlockCollisions" unique_id=146005280]
-position = Vector2(3260.5, -442.00006)
+position = Vector2(3262, -442.00003)
 scale = Vector2(23.111689, 5.3992023)
 shape = SubResource("RectangleShape2D_g1stl")
 
-[node name="Key" type="Sprite2D" parent="BlockCollisions" unique_id=376670115]
+[node name="CollectArea2D" type="StaticBody2D" parent="BlockCollisions" unique_id=56805847]
+script = ExtResource("18_3fduj")
+
+[node name="Key" type="Sprite2D" parent="BlockCollisions/CollectArea2D" unique_id=376670115]
 position = Vector2(-502, -266)
 scale = Vector2(0.28584558, 0.21323529)
 texture = ExtResource("18_ud1dr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockCollisions/CollectArea2D" unique_id=1288194889]
+position = Vector2(-493, -270)
+shape = SubResource("RectangleShape2D_xb5gr")
+
+[node name="UnlockLock" type="StaticBody2D" parent="BlockCollisions" unique_id=436433881]
+script = ExtResource("20_rhpd1")
+
+[node name="Lock" type="Sprite2D" parent="BlockCollisions/UnlockLock" unique_id=908226268]
+position = Vector2(2767.0002, -870.00006)
+scale = Vector2(0.34191176, 0.3740809)
+texture = SubResource("CompressedTexture2D_xb5gr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockCollisions/UnlockLock" unique_id=1723860863]
+position = Vector2(2786, -936)
+shape = SubResource("RectangleShape2D_q3agb")
 
 [node name="Exit" type="Area2D" parent="." unique_id=2090170482]
 position = Vector2(1352, 979)

@@ -11,6 +11,7 @@ const GRAVITY = 980.0
 @onready var rat2D = get_node("/root/Underground/Rat1")
 @onready var attack_area = $hitbox
 
+
 var near_door = false
 var entering_door = false
 var current_door = null
@@ -76,9 +77,9 @@ func _physics_process(delta: float):
 	# Attack
 	if Input.is_action_just_pressed("attack"):
 		anim.play("attack")
+		
 		for body in attack_area.get_overlapping_bodies():
 			if body.has_method("hit"):
-				print("yo")
 				body.hit()
 
 	# Door entry

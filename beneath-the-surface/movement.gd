@@ -25,7 +25,6 @@ func _ready() -> void:
 	print("Exit name: ", exit2D.name)
 
 func _on_animation_finished():
-	if anim.animation == "in":
 		entering_door = false
 		enter_door()
 

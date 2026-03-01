@@ -61,7 +61,7 @@ color = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 650.0
 offset_top = 300.0
-offset_right = 1307.0
+offset_right = 1324.0
 offset_bottom = 806.0
 theme_override_constants/separation = 40
 
@@ -69,8 +69,7 @@ theme_override_constants/separation = 40
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_7vrkn")
 theme_override_font_sizes/font_size = 72
-text = "The Moles Are Coming
-"
+text = "The Moles Were Right"
 
 [node name="Play" type="Button" parent="ColorRect/VBoxContainer" unique_id=161810115]
 layout_mode = 2
