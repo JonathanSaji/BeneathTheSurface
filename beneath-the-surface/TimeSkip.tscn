@@ -1,46 +1,10 @@
 [gd_scene format=3 uid="uid://8toqlfukkm80"]
 
 [ext_resource type="Texture2D" uid="uid://hs3nsqejmer3" path="res://PipBoy/Pip-Run.png" id="1_7jj3t"]
+[ext_resource type="Script" uid="uid://co4rh866vhk81" path="res://time_skip.gd" id="1_8ijrd"]
 [ext_resource type="Texture2D" uid="uid://pu43f6ia7ss8" path="res://PipMan/Pip-Walk.png" id="2_8ijrd"]
 [ext_resource type="FontFile" uid="uid://d3tjnf3p2p8t7" path="res://TheRomanRunesAlliance.ttf" id="3_0t56m"]
 [ext_resource type="Script" uid="uid://b2406hd7bldgb" path="res://rich_text_label.gd" id="4_2v6k0"]
-
-[sub_resource type="Animation" id="Animation_ubgpu"]
-resource_name = "Full Animation"
-length = 1.0333333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Baby:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Teen:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-
-[sub_resource type="Animation" id="Animation_uc38q"]
-length = 0.001
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_y38lw"]
-_data = {
-&"Full Animation": SubResource("Animation_ubgpu"),
-&"RESET": SubResource("Animation_uc38q")
-}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qh4kf"]
 atlas = ExtResource("1_7jj3t")
@@ -128,6 +92,139 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_ubgpu"]
+resource_name = "Full Animation"
+length = 7.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Baby:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(259, 695), Vector2(259, 1300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Teen:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(287.00012, 1337), Vector2(287, 700)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Wider:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.96666664, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(847, 1096), Vector2(843, 443)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rebellious:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5, 5.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(805, 1102), Vector2(851, 715)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Taller:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.9666667, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(869, 1106), Vector2(850, 578)]
+}
+
+[sub_resource type="Animation" id="Animation_uc38q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wider:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(843, 443)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Taller:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(869, 1106)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Rebellious:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(805, 1102)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Baby:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(259, 695)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Teen:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(287.00012, 1337)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y38lw"]
+_data = {
+&"Full Animation": SubResource("Animation_ubgpu"),
+&"RESET": SubResource("Animation_uc38q")
+}
+
 [node name="TimeSkip" type="Control" unique_id=1073557242]
 layout_mode = 3
 anchors_preset = 15
@@ -135,9 +232,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=176817216]
-libraries/ = SubResource("AnimationLibrary_y38lw")
+script = ExtResource("1_8ijrd")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=192846266]
 layout_mode = 0
@@ -150,31 +245,68 @@ position = Vector2(259, 695)
 scale = Vector2(2.199074, 1.9861112)
 sprite_frames = SubResource("SpriteFrames_4kap0")
 autoplay = "default"
-frame_progress = 0.9614099
+frame_progress = 0.18640216
 
 [node name="Teen" type="AnimatedSprite2D" parent="." unique_id=551204063]
-position = Vector2(-590.0001, 650)
+position = Vector2(287.00012, 1337)
 scale = Vector2(3.0092592, 2.791667)
 sprite_frames = SubResource("SpriteFrames_x7hml")
-frame_progress = 0.18537001
-
-[node name="Skip" type="Label" parent="." unique_id=1958689979]
-layout_mode = 0
-offset_left = 710.0
-offset_top = 329.0
-offset_right = 1788.0
-offset_bottom = 794.0
-theme_override_fonts/font = ExtResource("3_0t56m")
-theme_override_font_sizes/font_size = 100
-text = "12 Years Passed...
-
-Pip got wider
-He got taller
-
-He became rebelious...."
+autoplay = "default"
+frame_progress = 0.4103804
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=88477183]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.337
+anchor_bottom = 0.186
+offset_left = 841.0
+offset_top = 309.0
+offset_right = 983.74
+offset_bottom = 541.12
+theme_override_fonts/normal_font = ExtResource("3_0t56m")
+theme_override_font_sizes/normal_font_size = 100
 script = ExtResource("4_2v6k0")
+
+[node name="Taller" type="Label" parent="." unique_id=1340086014]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 578.0
+offset_right = 1928.0
+offset_bottom = 1043.0063
+theme_override_fonts/font = ExtResource("3_0t56m")
+theme_override_font_sizes/font_size = 100
+text = "He got Taller"
+
+[node name="Rebellious" type="Label" parent="." unique_id=1154019544]
+layout_mode = 0
+offset_left = 851.0
+offset_top = 715.0
+offset_right = 1929.0
+offset_bottom = 1180.0061
+theme_override_fonts/font = ExtResource("3_0t56m")
+theme_override_font_sizes/font_size = 100
+text = "He became rebelious...."
+
+[node name="Wider" type="Label" parent="." unique_id=1958689979]
+layout_mode = 0
+offset_left = 843.0
+offset_top = 443.0
+offset_right = 1921.0
+offset_bottom = 908.0059
+theme_override_fonts/font = ExtResource("3_0t56m")
+theme_override_font_sizes/font_size = 100
+text = "Pip got wider
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=176817216]
+libraries/ = SubResource("AnimationLibrary_y38lw")
+autoplay = &"Full Animation"
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1929381393]
+layout_mode = 0
+offset_left = 145.99998
+offset_top = 456.0
+offset_right = 185.99998
+offset_bottom = 496.0
+scale = Vector2(8.057563, -3.7126842)
+color = Color(0, 0, 0, 1)

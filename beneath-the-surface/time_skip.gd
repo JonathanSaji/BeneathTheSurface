@@ -7,4 +7,4 @@ func _ready():
 
 func _on_animation_finished(anim_name: StringName):
 	print("Animation finished: ", anim_name)
-	get_tree().change_scene_to_file("res://TimeSkip.tscn")
+	get_tree().change_scene_to_file("res://underground.tscn")

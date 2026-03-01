@@ -4,7 +4,7 @@ extends RichTextLabel
 
 func _ready():
 	visible_characters = 0
-	typewrite("Well well well... a human who digs.")
+	typewrite("12 Years Later... ")
 
 func typewrite(text):
 	self.text = text
