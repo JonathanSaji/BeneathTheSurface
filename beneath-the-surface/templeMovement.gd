@@ -32,7 +32,7 @@ func _on_door_exited(body):
 
 func enter_door():
 	print("Entering door!")
-	get_tree().change_scene_to_file("res://temple.tscn")
+	get_tree().change_scene_to_file("res://the_fall.tscn")
 
 func _physics_process(delta : float):
 	if not is_on_floor():

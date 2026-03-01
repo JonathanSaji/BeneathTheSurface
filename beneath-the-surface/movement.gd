@@ -2,55 +2,73 @@ extends CharacterBody2D
 const SPEED = 600.0
 const JUMP_VELOCITY = -350.0
 const GRAVITY = 980.0
-@onready var anim = $AnimatedSprite2D
-@onready var area2D = get_node("/root/Prologue/Scene/Area2D")
 
+@onready var anim = $AnimatedSprite2D
+@onready var door2D = get_node("/root/Prologue/Scene/Door")
+@onready var exit2D = get_node("/root/Prologue/Scene/Exit")
+@onready var attack_area = $hitbox
+
+var choice = null
 var near_door = false
 var entering_door = false
+var current_door = null
 
 func _ready() -> void:
-	area2D.body_entered.connect(_on_door_entered)
-	area2D.body_exited.connect(_on_door_exited)
+	
+	door2D.body_entered.connect(func(body): _on_door_entered(body, door2D))
+	door2D.body_exited.connect(func(body): _on_door_exited(body, door2D))
+	exit2D.body_entered.connect(func(body): _on_door_entered(body, exit2D))
+	exit2D.body_exited.connect(func(body): _on_door_exited(body, exit2D))
 	anim.animation_finished.connect(_on_animation_finished)
-	print(area2D)
+	
+	print("Door name: ", door2D.name)
+	print("Exit name: ", exit2D.name)
 
 func _on_animation_finished():
 	if anim.animation == "in":
 		entering_door = false
 		enter_door()
 
-func _on_door_entered(body):
-	print("something entered: ", body.get_name())
+func _on_door_entered(body, door):
 	if body == self:
 		near_door = true
-		print("near door = true")
+		current_door = door
+		print("Near door: ", door.name)
 
-func _on_door_exited(body):
-	print("something exited: ", body.get_name())
+func _on_door_exited(body, door):
 	if body == self:
 		near_door = false
+		current_door = null
+		print("Left door: ", door.name)
 
 func enter_door():
-	print("Entering door!")
-	get_tree().change_scene_to_file("res://temple.tscn")
+	print("Entering door: ", current_door.name if current_door else "unknown")
+	if current_door == door2D:
+		get_tree().change_scene_to_file("res://temple.tscn")
+	elif current_door == exit2D:
+		get_tree().change_scene_to_file("res://main_menu.tscn")
 
-func _physics_process(delta : float):
+func _physics_process(delta: float):
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
-		
+	
+	if Input.is_action_just_pressed("attack"):
+		for body in attack_area.get_overlapping_bodies():
+			if body.has_method("hit"):
+				anim.play("attack")
+				body.hit()
+
 	if entering_door:
 		velocity.x = 0
-		return  # ← stops all input processing below
+		return
 	else:
-		
 		if Input.is_action_just_pressed("space") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
-
 		if near_door and Input.is_action_just_pressed("forward"):
+			entering_door = true
 			anim.play("in")
 
-		var direction = Input.get_axis("left","right")
-
+		var direction = Input.get_axis("left", "right")
 		if direction != 0:
 			velocity.x = direction * SPEED
 		else:
@@ -61,8 +79,8 @@ func _physics_process(delta : float):
 		elif direction < 0:
 			anim.flip_h = true
 
-		
-
 		if direction != 0:
 			anim.play("run")
+		
+
 	move_and_slide()
