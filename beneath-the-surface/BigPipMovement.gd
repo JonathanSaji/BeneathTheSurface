@@ -5,13 +5,16 @@ const GRAVITY = 980.0
 
 @onready var anim = $AnimatedSprite2D
 @onready var exit2D = get_node("/root/Underground/Exit")
+@onready var angel2D = get_node("/root/Underground/Angel")
+
 @onready var attack_area = $hitbox
 
 var choice = null
 var near_door = false
 var entering_door = false
 var current_door = null
-var numJump = 0;
+var numJump = 0
+var hp = 3
 
 func _ready() -> void:
 	
@@ -19,10 +22,15 @@ func _ready() -> void:
 	#door2D.body_exited.connect(func(body): _on_door_exited(body, door2D))
 	exit2D.body_entered.connect(func(body): _on_door_entered(body, exit2D))
 	exit2D.body_exited.connect(func(body): _on_door_exited(body, exit2D))
+	
+	angel2D.body_entered.connect(func(body): _on_door_entered(body, angel2D))
+	angel2D.body_exited.connect(func(body): _on_door_exited(body, angel2D))
+	
 	anim.animation_finished.connect(_on_animation_finished)
 	
 	#print("Door name: ", door2D.name)
 	print("Exit name: ", exit2D.name)
+	print("Angel: ", angel2D.name)
 
 func _on_animation_finished():
 	if anim.animation == "in":
@@ -33,6 +41,8 @@ func _on_door_entered(body, door):
 	if body == self:
 		near_door = true
 		current_door = door
+		if door == angel2D:
+			hp = 0
 		print("Near door: ", door.name)
 
 func _on_door_exited(body, door):
@@ -71,23 +81,24 @@ func _physics_process(delta: float):
 			entering_door = true
 			anim.play("in")
 		
+		
 		if is_on_floor():
 			numJump = 0
 		
+		if hp <= 0:
+			get_tree().change_scene_to_file("res://underground.tscn")
 		
 		var direction = Input.get_axis("left", "right")
 		if direction != 0:
 			velocity.x = direction * SPEED
+			anim.play("run")
 		else:
+			anim.play("idle")
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 		if direction > 0:
 			anim.flip_h = false
 		elif direction < 0:
 			anim.flip_h = true
-
-		if direction != 0:
-			anim.play("run")
 		
-
 	move_and_slide()
