@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b8yddse4ypt65" path="res://prologue.gd" id="1_orjk5"]
 [ext_resource type="Texture2D" uid="uid://cbjipr3g05aru" path="res://PixelFantasy_Caves_1.0/mainlev_build.png" id="2_4baxb"]
 [ext_resource type="Texture2D" uid="uid://hs3nsqejmer3" path="res://PipBoy/Pip-Run.png" id="3_orjk5"]
+[ext_resource type="Texture2D" uid="uid://dds5j53wde4l0" path="res://PipBoy/Idle.png" id="4_mx85p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mx85p"]
 texture = ExtResource("2_4baxb")
@@ -919,6 +920,22 @@ sources/0 = SubResource("TileSetAtlasSource_mx85p")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4baxb"]
 size = Vector2(279, 459)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrfim"]
+atlas = ExtResource("4_mx85p")
+region = Rect2(0, 432, 216, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_na1hk"]
+atlas = ExtResource("4_mx85p")
+region = Rect2(216, 432, 216, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yukw5"]
+atlas = ExtResource("4_mx85p")
+region = Rect2(432, 432, 216, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q11v8"]
+atlas = ExtResource("4_mx85p")
+region = Rect2(648, 432, 216, 216)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ohvg6"]
 atlas = ExtResource("3_orjk5")
 region = Rect2(0, 864, 216, 216)
@@ -969,6 +986,23 @@ region = Rect2(1080, 432, 216, 216)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ohvg6"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrfim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_na1hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yukw5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q11v8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ohvg6")
@@ -1042,7 +1076,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_orjk5"]
 resource_name = "scroll_up"
-length = 3.3666666
+length = 0.9
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1050,7 +1084,7 @@ tracks/0/path = NodePath("Menu:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0667, 3.2666667),
+"times": PackedFloat32Array(0.0667, 0.83333325),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -1080)]
@@ -1062,7 +1096,7 @@ tracks/1/path = NodePath("Scene:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0667, 3.267),
+"times": PackedFloat32Array(0.0667, 0.83333325),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 1080), Vector2(0, 0)]
@@ -1113,10 +1147,9 @@ text = "Quit
 "
 
 [node name="Scene" type="ColorRect" parent="." unique_id=1611906930]
-offset_left = 9.0
-offset_top = 1071.0
-offset_right = 1989.0
-offset_bottom = 2151.0
+offset_top = 1080.0
+offset_right = 1980.0
+offset_bottom = 2160.0
 color = Color(0, 0, 0, 0)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Scene" unique_id=2135271751]
@@ -1139,9 +1172,8 @@ script = ExtResource("1_2o1rx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Scene/CharacterBody2D" unique_id=2007820625]
 position = Vector2(132, -154)
 sprite_frames = SubResource("SpriteFrames_ohvg6")
-animation = &"in"
-frame = 5
-frame_progress = 1.0
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/CharacterBody2D" unique_id=85152621]
 position = Vector2(141, -139.5)
@@ -1156,7 +1188,7 @@ position = Vector2(142, -488)
 position = Vector2(991, 938)
 shape = SubResource("RectangleShape2D_2o1rx")
 
-[node name="Left2" type="CollisionShape2D" parent="Scene/StaticBody2D" unique_id=1161162369]
+[node name="Right" type="CollisionShape2D" parent="Scene/StaticBody2D" unique_id=1161162369]
 position = Vector2(1925, 484)
 shape = SubResource("RectangleShape2D_rwpj4")
 
