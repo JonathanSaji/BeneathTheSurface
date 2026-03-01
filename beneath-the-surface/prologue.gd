@@ -8,6 +8,6 @@ func _ready() -> void:
 	anim.play("scroll_up")
 	anim.animation_finished.connect(_on_animation_finished)
 
-func _on_animation_finished(name: StringName) -> void:
-	if name == "scroll_up":
+func _on_animation_finished(character_name: StringName) -> void:
+	if character_name == "scroll_up":
 		camera.enabled = true
