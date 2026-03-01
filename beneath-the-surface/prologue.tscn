@@ -919,6 +919,30 @@ sources/0 = SubResource("TileSetAtlasSource_mx85p")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4baxb"]
 size = Vector2(279, 459)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohvg6"]
+atlas = ExtResource("3_orjk5")
+region = Rect2(0, 864, 216, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_845r4"]
+atlas = ExtResource("3_orjk5")
+region = Rect2(216, 864, 216, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cu1f"]
+atlas = ExtResource("3_orjk5")
+region = Rect2(432, 864, 216, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfcga"]
+atlas = ExtResource("3_orjk5")
+region = Rect2(648, 864, 216, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hx0h"]
+atlas = ExtResource("3_orjk5")
+region = Rect2(864, 864, 216, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xplqc"]
+atlas = ExtResource("3_orjk5")
+region = Rect2(1080, 864, 216, 216)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4baxb"]
 atlas = ExtResource("3_orjk5")
 region = Rect2(0, 432, 216, 216)
@@ -945,6 +969,29 @@ region = Rect2(1080, 432, 216, 216)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ohvg6"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohvg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_845r4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cu1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfcga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hx0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xplqc")
+}],
+"loop": false,
+"name": &"in",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4baxb")
@@ -1092,7 +1139,9 @@ script = ExtResource("1_2o1rx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Scene/CharacterBody2D" unique_id=2007820625]
 position = Vector2(132, -154)
 sprite_frames = SubResource("SpriteFrames_ohvg6")
-animation = &"run"
+animation = &"in"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/CharacterBody2D" unique_id=85152621]
 position = Vector2(141, -139.5)
